@@ -11,6 +11,7 @@ import {
   Sparkles,
   Phone,
   Mail,
+  MessageCircle,
   ChevronDown,
   ShoppingCart,
   BarChart3,
@@ -71,14 +72,31 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(true);
   const dropdownTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 30);
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileMenuOpen(false);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = "unset";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [mobileMenuOpen]);
 
   const openDropdown = () => {
     if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
@@ -92,35 +110,35 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
   const pageLinks = [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
-    { label: "Contact", href: "/contact" },
+    { label: "Contact Us", href: "/contact" },
     { label: "Privacy Policy", href: "/privacy-policy" },
   ];
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? "py-3 bg-white/95 backdrop-blur-xl border-b border-purple-100 shadow-[0_4px_30px_rgba(124,58,237,0.07)]"
-            : "py-5 bg-white/60 backdrop-blur-md"
+            ? "py-2.5 sm:py-3 bg-white/95 backdrop-blur-xl border-b border-purple-100 shadow-[0_4px_30px_rgba(124,58,237,0.07)]"
+            : "py-3.5 sm:py-5 bg-white/70 backdrop-blur-md"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 flex items-center justify-between gap-3">
           {/* ── Logo ── */}
-          <Link href="/" className="group flex items-center gap-3 select-none shrink-0">
-            <div className="bg-[#0f0f17] px-3.5 py-1.5 rounded-xl border border-purple-300/40 shadow-sm flex items-center transition-transform duration-300 group-hover:scale-105">
+          <Link href="/" className="group flex items-center gap-2 select-none shrink-0">
+            <div className="bg-[#0f0f17] px-3 py-1.5 rounded-xl border border-purple-300/40 shadow-sm flex items-center transition-transform duration-300 group-hover:scale-105">
               <Image
                 src="/logo.png"
                 alt="X ONE HUB"
-                width={125}
-                height={48}
-                className="h-8 md:h-9 w-auto object-contain"
+                width={120}
+                height={40}
+                className="h-7 sm:h-8 md:h-9 w-auto object-contain"
                 priority
               />
             </div>
           </Link>
 
-          {/* ── Desktop Nav ── */}
+          {/* ── Desktop Nav (lg:flex) ── */}
           <nav className="hidden lg:flex items-center gap-1 px-3 py-1.5 rounded-full border border-purple-100 bg-white/80 backdrop-blur-md shadow-sm">
             {/* Home */}
             <Link
@@ -142,7 +160,9 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
               >
                 <span>Services</span>
                 <ChevronDown
-                  className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesDropdownOpen ? "rotate-180 text-purple-600" : ""}`}
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                    servicesDropdownOpen ? "rotate-180 text-purple-600" : ""
+                  }`}
                 />
               </Link>
 
@@ -220,10 +240,11 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
             </Link>
           </nav>
 
-          {/* ── Right Side CTA ── */}
-          <div className="flex items-center gap-3">
+          {/* ── Right Side Actions ── */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* Desktop Contact Us CTA */}
             <MagneticButton onClick={onOpenQuote} dataCursor="Talk">
-              <button className="relative group overflow-hidden px-5 py-2.5 rounded-full bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 text-white font-medium text-xs md:text-sm tracking-wide shadow-[0_4px_20px_rgba(124,58,237,0.35)] hover:shadow-[0_6px_25px_rgba(124,58,237,0.5)] transition-all duration-300 flex items-center gap-2">
+              <button className="hidden sm:flex relative group overflow-hidden px-4 md:px-5 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 text-white font-medium text-xs md:text-sm tracking-wide shadow-[0_4px_20px_rgba(124,58,237,0.35)] hover:shadow-[0_6px_25px_rgba(124,58,237,0.5)] transition-all duration-300 items-center gap-2">
                 <span className="relative z-10 flex items-center gap-1.5 font-display font-semibold">
                   <Sparkles className="w-3.5 h-3.5 text-purple-200" />
                   Contact Us
@@ -232,149 +253,189 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
               </button>
             </MagneticButton>
 
-            {/* Mobile Hamburger */}
+            {/* Quick WhatsApp button for mobile screens */}
+            <a
+              href="https://wa.me/923322568950"
+              target="_blank"
+              rel="noreferrer"
+              className="sm:hidden p-2 rounded-xl border border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition-colors shadow-sm"
+              aria-label="WhatsApp"
+            >
+              <MessageCircle className="w-4 h-4 text-emerald-600" />
+            </a>
+
+            {/* Mobile Hamburger Menu Toggle Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2.5 rounded-xl border border-purple-200 bg-white text-slate-700 hover:text-purple-700 shadow-sm"
-              aria-label="Toggle menu"
+              className="lg:hidden p-2 rounded-xl border border-purple-200 bg-white text-slate-700 hover:text-purple-700 active:scale-95 transition-all shadow-sm"
+              aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 text-purple-700" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
       </header>
 
-      {/* ── Mobile Drawer ── */}
+      {/* ── Mobile Navigation Drawer ── */}
       <div
-        className={`fixed inset-0 z-50 lg:hidden transition-all duration-500 ${
+        className={`fixed inset-0 z-50 lg:hidden transition-all duration-300 ${
           mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
+        {/* Backdrop overlay */}
         <div
-          className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+          className="absolute inset-0 bg-black/50 backdrop-blur-sm"
           onClick={() => setMobileMenuOpen(false)}
         />
+
+        {/* Drawer slide-in panel */}
         <div
-          className={`absolute top-0 right-0 bottom-0 w-[88%] max-w-sm bg-white border-l border-purple-100 flex flex-col shadow-2xl transition-transform duration-500 ${
+          className={`absolute top-0 right-0 bottom-0 w-[88%] max-w-sm bg-white border-l border-purple-100 flex flex-col shadow-2xl transition-transform duration-300 ease-out ${
             mobileMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
           {/* Drawer Header */}
-          <div className="flex items-center justify-between p-5 border-b border-purple-100">
-            <div className="bg-[#0f0f17] px-3 py-1.5 rounded-lg">
-              <Image src="/logo.png" alt="X ONE HUB" width={90} height={35} className="h-6 w-auto object-contain" />
+          <div className="flex items-center justify-between p-4 sm:p-5 border-b border-purple-100">
+            <div className="bg-[#0f0f17] px-3 py-1.5 rounded-xl">
+              <Image src="/logo.png" alt="X ONE HUB" width={100} height={36} className="h-7 w-auto object-contain" />
             </div>
             <button
               onClick={() => setMobileMenuOpen(false)}
-              className="p-2 rounded-lg text-slate-500 hover:bg-slate-100 hover:text-purple-700 transition-colors"
+              className="p-2 rounded-xl text-slate-500 hover:bg-slate-100 hover:text-purple-700 transition-colors"
+              aria-label="Close menu"
             >
               <X className="w-5 h-5" />
             </button>
           </div>
 
-          {/* Drawer Body — scrollable */}
-          <div className="flex-1 overflow-y-auto py-5 px-5 space-y-1">
-
+          {/* Drawer Body — Scrollable with all links & services */}
+          <div className="flex-1 overflow-y-auto py-4 px-4 space-y-1">
             {/* Home */}
             <Link
               href="/"
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center justify-between py-3 px-4 rounded-xl font-display font-bold text-base text-slate-800 hover:text-purple-700 hover:bg-purple-50 transition-all"
             >
-              Home
+              <span>Home</span>
             </Link>
 
-            {/* Services accordion */}
-            <div>
+            {/* Services Accordion */}
+            <div className="rounded-2xl border border-purple-100/80 bg-purple-50/40 p-2">
               <button
                 onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                className="w-full flex items-center justify-between py-3 px-4 rounded-xl font-display font-bold text-base text-slate-800 hover:text-purple-700 hover:bg-purple-50 transition-all"
+                className="w-full flex items-center justify-between py-2.5 px-3 rounded-xl font-display font-bold text-base text-purple-900 transition-all"
               >
-                <span>Services</span>
+                <div className="flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-purple-600" />
+                  <span>All Services (15)</span>
+                </div>
                 <ChevronDown
-                  className={`w-4 h-4 transition-transform ${mobileServicesOpen ? "rotate-180 text-purple-600" : "text-slate-400"}`}
+                  className={`w-4 h-4 transition-transform duration-200 ${
+                    mobileServicesOpen ? "rotate-180 text-purple-600" : "text-slate-400"
+                  }`}
                 />
               </button>
 
               {mobileServicesOpen && (
-                <div className="mt-1 pl-4 space-y-4">
+                <div className="mt-2 space-y-3 pt-2 border-t border-purple-100">
                   {SERVICES_DROPDOWN.map((group) => (
-                    <div key={group.category}>
-                      <div className="flex items-center gap-1.5 mb-1.5 px-2">
+                    <div key={group.category} className="space-y-1">
+                      <div className="flex items-center gap-1.5 px-3 py-1">
                         <span className={`w-1.5 h-1.5 rounded-full ${group.dot}`} />
                         <span className={`text-[10px] font-mono font-bold uppercase tracking-widest ${group.color}`}>
                           {group.category}
                         </span>
                       </div>
-                      {group.items.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                          <Link
-                            key={item.href}
-                            href={item.href}
-                            onClick={() => setMobileMenuOpen(false)}
-                            className="flex items-center gap-2.5 py-2 px-3 rounded-lg text-sm text-slate-700 hover:text-purple-700 hover:bg-purple-50 transition-all"
-                          >
-                            <Icon className="w-4 h-4 text-slate-400 shrink-0" />
-                            <span>{item.label}</span>
-                          </Link>
-                        );
-                      })}
+                      <div className="space-y-0.5">
+                        {group.items.map((item) => {
+                          const Icon = item.icon;
+                          return (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="flex items-center gap-2.5 py-2 px-3 rounded-xl text-xs font-medium text-slate-700 hover:text-purple-700 hover:bg-white transition-all"
+                            >
+                              <Icon className="w-3.5 h-3.5 text-purple-500 shrink-0" />
+                              <span>{item.label}</span>
+                            </Link>
+                          );
+                        })}
+                      </div>
                     </div>
                   ))}
-                  <Link
-                    href="/services"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center gap-2 py-2 px-3 text-xs font-bold text-purple-700 hover:underline"
-                  >
-                    <span>See all {15} services</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </Link>
+
+                  <div className="pt-2">
+                    <Link
+                      href="/services"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-purple-600 text-white font-mono text-xs font-bold hover:bg-purple-700 transition-colors shadow-sm"
+                    >
+                      <span>Explore All Services Page</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
                 </div>
               )}
             </div>
 
-            {/* Page Links */}
-            {pageLinks.slice(1).map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-between py-3 px-4 rounded-xl font-display font-bold text-base text-slate-800 hover:text-purple-700 hover:bg-purple-50 transition-all"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {/* Other Dedicated Pages */}
+            <Link
+              href="/about"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center justify-between py-3 px-4 rounded-xl font-display font-bold text-base text-slate-800 hover:text-purple-700 hover:bg-purple-50 transition-all"
+            >
+              <span>About Us</span>
+            </Link>
+
+            <Link
+              href="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center justify-between py-3 px-4 rounded-xl font-display font-bold text-base text-slate-800 hover:text-purple-700 hover:bg-purple-50 transition-all"
+            >
+              <span>Contact Us</span>
+            </Link>
+
+            <Link
+              href="/privacy-policy"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center justify-between py-3 px-4 rounded-xl font-display font-bold text-base text-slate-800 hover:text-purple-700 hover:bg-purple-50 transition-all"
+            >
+              <span>Privacy Policy</span>
+            </Link>
           </div>
 
-          {/* Drawer Footer */}
-          <div className="border-t border-purple-100 p-5 space-y-3">
+          {/* Drawer Footer CTA */}
+          <div className="border-t border-purple-100 p-4 sm:p-5 space-y-3 bg-slate-50">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenQuote();
               }}
-              className="w-full py-3.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-display font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-colors"
+              className="w-full py-3.5 rounded-full bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 text-white font-display font-bold text-sm flex items-center justify-center gap-2 shadow-[0_4px_15px_rgba(124,58,237,0.35)] active:scale-98 transition-all"
             >
               <Sparkles className="w-4 h-4 text-purple-200" />
-              Contact Us
+              <span>Contact Us Now</span>
+              <ArrowUpRight className="w-4 h-4" />
             </button>
-            <div className="text-xs text-slate-500 space-y-2">
-              <a
-                href="mailto:info@xonehub.com"
-                className="flex items-center gap-2 hover:text-purple-700 transition-colors"
-              >
-                <Mail className="w-3.5 h-3.5 text-purple-600" />
-                info@xonehub.com
-              </a>
+
+            <div className="flex items-center justify-between pt-1 text-xs text-slate-600">
               <a
                 href="https://wa.me/923322568950"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 hover:text-purple-700 transition-colors"
+                className="flex items-center gap-1.5 text-emerald-700 font-semibold hover:underline"
               >
-                <Phone className="w-3.5 h-3.5 text-purple-600" />
-                +92-332-2568950
+                <MessageCircle className="w-4 h-4 text-emerald-600" />
+                <span>WhatsApp</span>
+              </a>
+
+              <a
+                href="mailto:info@xonehub.com"
+                className="flex items-center gap-1.5 text-purple-700 font-semibold hover:underline"
+              >
+                <Mail className="w-4 h-4 text-purple-600" />
+                <span>info@xonehub.com</span>
               </a>
             </div>
           </div>
