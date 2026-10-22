@@ -1,10 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import SectionLabel from "./ui/SectionLabel";
+import { HoverMember, HoverMemberItem } from "./v1/skiper6";
+import { Skiper30 } from "./v1/skiper30";
 import {
   ArrowUpRight,
   ShoppingCart,
@@ -12,6 +14,7 @@ import {
   Package,
   BarChart3,
   Building2,
+  Code2,
   CheckCircle2,
   Sparkles,
 } from "lucide-react";
@@ -41,7 +44,7 @@ const services: ServiceItem[] = [
     tagline: "Boost customer trust and increase listing conversions up to 20%",
     description:
       "Premium Enhanced Brand Content and visual storytelling designed to highlight your product benefits, answer customer questions, and win the buy box against competitors.",
-    image: "/images/service-amazon.jpg",
+    image: "/images/service-design.jpg",
     icon: FileCheck2,
     highlight: "Conversion Booster",
     tags: ["High-Res Visuals", "Comparison Tables", "Brand Story", "+20% Conversion"],
@@ -132,27 +135,174 @@ const services: ServiceItem[] = [
       "Step-by-step guidance for US business bank account opening",
     ],
   },
+  {
+    id: "web-development",
+    slug: "web-development",
+    number: "06",
+    category: "Digital Growth",
+    title: "Shopify & Web Storefronts",
+    tagline: "High-speed custom e-commerce storefronts engineered for conversion",
+    description:
+      "We design bespoke Shopify 2.0 and Next.js digital storefronts with sub-second page loads, conversion-optimized checkout funnels, and mobile-first UX.",
+    image: "/images/korean-skincare.jpg",
+    icon: Code2,
+    highlight: "Sub-Second Speed",
+    tags: ["Shopify 2.0", "Next.js Architecture", "Mobile First", "High Conversion"],
+    capabilities: [
+      "Bespoke Shopify 2.0 custom theme engineering",
+      "High-conversion mobile checkout and upsell drawers",
+      "Sub-second Core Web Vitals speed optimization",
+      "Omnichannel payment gateways & analytics setup",
+    ],
+  },
 ];
 
 interface SolutionsSectionProps {
   onSelectService: (serviceName: string) => void;
 }
 
-export default function SolutionsSection({ onSelectService }: SolutionsSectionProps) {
-  return (
-    <section id="services" className="relative py-28 md:py-36 bg-white overflow-hidden border-t border-purple-100">
-      {/* Background ambient lighting */}
-      <div className="ambient-glow w-[500px] h-[500px] top-1/3 -left-32 bg-purple-200/40" />
-      <div className="ambient-glow w-[500px] h-[500px] bottom-10 -right-20 bg-violet-200/40" />
+// ── Service Card Presentation Component ──
+function ServiceCard({
+  service,
+  onSelect,
+}: {
+  service: ServiceItem;
+  onSelect: (name: string) => void;
+}) {
+  const Icon = service.icon;
 
-      <div className="relative max-w-7xl mx-auto px-6 md:px-10 z-10">
+  return (
+    <div className="group relative h-full rounded-3xl bg-white border border-purple-100 shadow-[0_10px_35px_rgba(124,58,237,0.06)] hover:border-purple-300 hover:shadow-[0_22px_50px_rgba(124,58,237,0.14)] transition-all duration-300 overflow-hidden flex flex-col justify-between">
+      <div>
+        {/* Top Image Preview Banner */}
+        <div className="relative aspect-[16/9] w-full overflow-hidden bg-purple-50">
+          <Image
+            src={service.image}
+            alt={service.title}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+
+          {/* Top Badges */}
+          <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+            <span className="font-mono text-xs font-bold text-white bg-black/75 px-2.5 py-1 rounded-full border border-white/20">
+              {service.number}
+            </span>
+            <span className="text-[11px] font-mono font-bold text-purple-100 bg-purple-600 px-3 py-1 rounded-full border border-purple-400/40 shadow-sm">
+              {service.highlight}
+            </span>
+          </div>
+
+          <div className="absolute bottom-3 left-3 flex items-center gap-2 pointer-events-none">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-purple-200 bg-black/75 px-2.5 py-0.5 rounded-full border border-white/20">
+              {service.category}
+            </span>
+          </div>
+        </div>
+
+        {/* Body Content */}
+        <div className="p-6 sm:p-7">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-10 h-10 rounded-2xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-700 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300 shrink-0">
+              <Icon className="w-5 h-5" />
+            </div>
+            <h3 className="font-display font-bold text-xl sm:text-2xl text-[#0f0f17] group-hover:text-purple-700 transition-colors">
+              {service.title}
+            </h3>
+          </div>
+
+          <p className="text-slate-600 text-sm leading-relaxed mb-5 font-light">
+            {service.tagline}
+          </p>
+
+          {/* Capabilities bullets */}
+          <div className="space-y-2 mb-6">
+            {service.capabilities.slice(0, 3).map((cap, i) => (
+              <div key={i} className="flex items-start gap-2 text-xs text-slate-700">
+                <CheckCircle2 className="w-3.5 h-3.5 text-purple-600 shrink-0 mt-0.5" />
+                <span>{cap}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Feature Tags */}
+          <div className="flex flex-wrap gap-1.5 pt-4 border-t border-purple-100">
+            {service.tags.map((tag, i) => (
+              <span
+                key={i}
+                className="text-[11px] font-mono text-purple-700 bg-purple-50 px-2.5 py-0.5 rounded-full border border-purple-100"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Card Action Footer */}
+      <div className="p-6 sm:p-7 pt-0 flex items-center justify-between gap-3">
+        <Link
+          href={`/services/${service.slug}`}
+          className="text-xs font-semibold text-purple-700 hover:text-purple-900 flex items-center gap-1 group/link"
+        >
+          <span>Full Details</span>
+          <ArrowUpRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+        </Link>
+
+        <motion.button
+          whileHover={{ scale: 1.04 }}
+          whileTap={{ scale: 0.96 }}
+          onClick={() => onSelect(service.title)}
+          className="px-4 py-2 rounded-full bg-purple-600 hover:bg-purple-700 text-white font-semibold text-xs tracking-wide transition-colors shadow-sm"
+        >
+          Get Quote
+        </motion.button>
+      </div>
+    </div>
+  );
+}
+
+export default function SolutionsSection({ onSelectService }: SolutionsSectionProps) {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const update = () => setIsDesktop(window.innerWidth >= 768);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  // Format services for Skiper6 HoverMember component with punchy shortName
+  const hoverMembersData: HoverMemberItem[] = [
+    { ...services[0], name: services[0].title, shortName: "A+ CONTENT" },
+    { ...services[1], name: services[1].title, shortName: "ACCOUNT SETUP" },
+    { ...services[2], name: services[2].title, shortName: "FBA AUTOMATION" },
+    { ...services[3], name: services[3].title, shortName: "AMAZON PPC" },
+    { ...services[4], name: services[4].title, shortName: "WYOMING LLC" },
+    { ...services[5], name: services[5].title, shortName: "SHOPIFY STORES" },
+  ];
+
+  // Only the top 3 featured services are displayed in the main card grid
+  const leftCard = services[0];   // 01: A+ Content & EBC
+  const centerCard = services[1]; // 02: Amazon Account Creation
+  const rightCard = services[2];  // 03: FBA Store Automation
+
+  return (
+    <section id="services" className="relative py-24 md:py-32 bg-white overflow-hidden border-t border-purple-100">
+      {/* Background ambient lighting */}
+      <div className="ambient-glow w-[500px] h-[500px] top-1/4 -left-32 bg-purple-200/40 pointer-events-none" />
+      <div className="ambient-glow w-[500px] h-[500px] bottom-10 -right-20 bg-violet-200/40 pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-10 z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16"
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8"
         >
           <div>
             <SectionLabel number="02" text="Core Solutions" />
@@ -160,125 +310,48 @@ export default function SolutionsSection({ onSelectService }: SolutionsSectionPr
               Featured <span className="gradient-text-purple">Services</span>
             </h2>
           </div>
-          <p className="text-slate-600 max-w-md text-base leading-relaxed font-light">
-            Our most popular Amazon Growth and US LLC formation packages for international founders and e-commerce sellers.
-          </p>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+            <p className="text-slate-600 max-w-md text-sm sm:text-base leading-relaxed font-light">
+              Watch our featured solutions emerge. Explore full catalog of all 15 enterprise services below.
+            </p>
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-1.5 self-start sm:self-auto text-xs font-mono font-bold uppercase tracking-wider text-purple-700 bg-purple-50 hover:bg-purple-100 border border-purple-200 px-4 py-2 rounded-full transition-all shrink-0"
+            >
+              <span>See All (15)</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
         </motion.div>
 
-        {/* 5 Featured Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-            return (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                whileHover={{ y: -8, transition: { duration: 0.25 } }}
-                className="group relative rounded-3xl bg-white border border-purple-100/90 shadow-[0_10px_35px_rgba(124,58,237,0.06)] hover:border-purple-300 hover:shadow-[0_25px_60px_rgba(124,58,237,0.14)] transition-all duration-300 overflow-hidden flex flex-col justify-between"
-              >
-                {/* Top Banner Image with Overlay */}
-                <div className="relative aspect-[16/9] w-full overflow-hidden bg-purple-50">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-
-                  {/* Badges on Top */}
-                  <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between">
-                    <span className="font-mono text-[11px] font-bold text-white bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
-                      {service.category}
-                    </span>
-                    <span className="font-mono text-[11px] font-bold text-purple-100 bg-purple-600/90 backdrop-blur-md px-2.5 py-1 rounded-full shadow-sm">
-                      {service.highlight}
-                    </span>
-                  </div>
-
-                  {/* Icon & Title over image */}
-                  <div className="absolute bottom-3.5 left-4 right-4 flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-white/95 backdrop-blur-md flex items-center justify-center text-purple-700 shadow-md shrink-0">
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-display font-black text-xl text-white drop-shadow-sm leading-snug">
-                        {service.title}
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Card Body */}
-                <div className="p-6 flex-1 flex flex-col justify-between">
-                  <div>
-                    <p className="text-xs font-mono font-semibold text-purple-700 uppercase tracking-wider mb-2">
-                      {service.tagline}
-                    </p>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
-                      {service.description}
-                    </p>
-
-                    {/* Tags */}
-                    <div className="mt-4 flex flex-wrap gap-1.5">
-                      {service.tags.map((tag, idx) => (
-                        <span
-                          key={idx}
-                          className="px-2 py-0.5 rounded-md text-[10px] font-mono text-slate-600 bg-purple-50 border border-purple-100"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Key capabilities list */}
-                    <div className="mt-5 pt-4 border-t border-purple-100 space-y-2">
-                      {service.capabilities.map((cap, cIdx) => (
-                        <div key={cIdx} className="flex items-start gap-2 text-xs text-slate-700">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-purple-600 shrink-0 mt-0.5" />
-                          <span>{cap}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Action Link row */}
-                  <div className="mt-6 pt-4 border-t border-purple-100 flex items-center justify-between">
-                    <Link
-                      href={`/services/${service.slug}`}
-                      className="inline-flex items-center gap-1.5 font-display font-bold text-xs uppercase tracking-wider text-purple-700 hover:text-purple-900 group/link"
-                      data-cursor="Learn"
-                    >
-                      <span>View Details</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
-                    </Link>
-
-                    <button
-                      onClick={() => onSelectService(service.title)}
-                      className="px-3.5 py-1.5 rounded-full bg-purple-50 hover:bg-purple-100 text-purple-700 font-semibold text-xs border border-purple-200 transition-colors"
-                    >
-                      Book Service
-                    </button>
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
+        {/* ── SKIPER UI #06: HOVER SERVICES COMPONENT ── */}
+        <div className="w-full my-6 sm:my-8 mb-12 sm:mb-16">
+          <HoverMember
+            teamMembers={hoverMembersData}
+            defaultName="X-ONE HUB"
+            backgroundColor="bg-transparent"
+            textColor="text-slate-300"
+            hoverTextColor="text-purple-600"
+            onSelectMember={(item) => onSelectService(item.name)}
+          />
         </div>
 
-        {/* View All 15 Services Banner with "See All" */}
+        {/* ── SKIPER UI #30: OLIVER PARALLAX SERVICES GALLERY ──
+            Stunning multi-column parallax depth effect scrolling at differential speeds!
+        */}
+        <div className="w-full my-6 sm:my-8 mb-12 sm:mb-16">
+          <Skiper30 onSelectService={onSelectService} />
+        </div>
+
+        {/* ── PROMINENT "SEE ALL 15 SERVICES" CTA BANNER ── */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mt-14 p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-purple-700 via-indigo-700 to-purple-800 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          className="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-purple-700 via-indigo-700 to-purple-800 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl"
         >
-          <div className="space-y-1">
+          <div className="space-y-2">
             <span className="text-xs font-mono uppercase tracking-widest text-purple-200 font-bold flex items-center gap-2">
               <Sparkles className="w-3.5 h-3.5" />
               Complete Catalog — 15 Services Total
@@ -287,7 +360,7 @@ export default function SolutionsSection({ onSelectService }: SolutionsSectionPr
               Looking for More Services?
             </h3>
             <p className="text-sm text-purple-100 font-light max-w-xl leading-relaxed">
-              Explore all 15 services across Amazon Growth, US LLC Formation (Wyoming, Florida, Texas), Brand Registry, Trademark, and Digital Marketing.
+              Explore all 15 services across Amazon Growth, US LLC Formation (Wyoming, Florida, Texas), Brand Registry, Trademark, and Digital Web Development. Click below to inspect our full catalog.
             </p>
           </div>
           <Link

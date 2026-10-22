@@ -1,12 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
+import Preloader_004 from "@/components/v1/skiper10";
 import CustomCursor from "@/components/ui/CustomCursor";
 import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import MarqueeSection from "@/components/MarqueeSection";
 import SolutionsSection from "@/components/SolutionsSection";
+import PortfolioStackSection from "@/components/PortfolioStackSection";
 import WhySection from "@/components/WhySection";
 import StatisticsSection from "@/components/StatisticsSection";
 import ProcessSection from "@/components/ProcessSection";
@@ -17,7 +20,15 @@ import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
 export default function Home() {
+  const [showPreloader, setShowPreloader] = useState(true);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPreloader(false);
+    }, 2400);
+    return () => clearTimeout(timer);
+  }, []);
   const [selectedService, setSelectedService] = useState<string | undefined>(undefined);
 
   const handleOpenQuote = (serviceName?: string) => {
@@ -32,6 +43,12 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-[#060608] text-[#f4f4f6] selection:bg-purple-600 selection:text-white">
+      {/* ── Skiper UI #10: Double Stairs Preloader (Preloader_004) ── */}
+      <AnimatePresence mode="wait">
+        {showPreloader && (
+          <Preloader_004 onComplete={() => setShowPreloader(false)} />
+        )}
+      </AnimatePresence>
       {/* Custom Precision Cursor */}
       <CustomCursor />
 
@@ -50,6 +67,9 @@ export default function Home() {
 
         {/* Solutions / Core Services Grid with 3D Tilt */}
         <SolutionsSection onSelectService={(service) => handleOpenQuote(service)} />
+
+        {/* Sticky Stacking Cards Portfolio Section */}
+        <PortfolioStackSection onOpenQuote={() => handleOpenQuote()} />
 
         {/* Studio Manifesto / Why X-One Hub */}
         <WhySection />
