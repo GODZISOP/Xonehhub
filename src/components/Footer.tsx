@@ -108,17 +108,22 @@ export default function Footer({ onOpenQuote }: FooterProps) {
               </li>
               <li>
                 <a href="/services/wyoming-llc" className="text-zinc-400 hover:text-white transition-colors">
-                  Wyoming LLC — $350
+                  Wyoming LLC — $500
                 </a>
               </li>
               <li>
-                <a href="/services/graphic-design" className="text-zinc-400 hover:text-white transition-colors">
-                  Graphic Design & Branding
+                <a href="/services/brand-approvals" className="text-zinc-400 hover:text-white transition-colors">
+                  Brand Approvals
                 </a>
               </li>
               <li>
-                <a href="/services/web-development" className="text-zinc-400 hover:text-white transition-colors">
-                  Web Development
+                <a href="/services/airwallex-account-setup" className="text-zinc-400 hover:text-white transition-colors">
+                  Airwallex Account — $100
+                </a>
+              </li>
+              <li>
+                <a href="/services/stripe-account-setup" className="text-zinc-400 hover:text-white transition-colors">
+                  Stripe Account — $100
                 </a>
               </li>
             </ul>

@@ -11,7 +11,7 @@ interface ProjectData {
   number: string;
   title: string;
   category: string;
-  filterCategory: "all" | "ecommerce" | "branding" | "marketing";
+  filterCategory: "all" | "amazon" | "approvals" | "llc";
   tagline: string;
   description: string;
   clientUrl: string;
@@ -28,101 +28,131 @@ interface ProjectData {
 
 const projects: ProjectData[] = [
   {
-    id: "korean-skins-care",
+    id: "amazon-account-creation",
     number: "01",
-    title: "Korean Skins Care",
-    category: "E-Commerce & Brand Architecture",
-    filterCategory: "ecommerce",
-    tagline: "Global direct-to-consumer authentic skincare storefront",
+    title: "Amazon Seller Central Account Creation & Verification",
+    category: "Guaranteed Non-Resident Identity Verification & Approval",
+    filterCategory: "amazon",
+    tagline: "Avoid instant Section 3 suspensions with complete document pre-vetting",
     description:
-      "We engineered an end-to-end e-commerce infrastructure for Korean Skins Care, delivering authentic Korean beauty cosmetics across international markets with sub-second page performance.",
-    clientUrl: "koreanskinscare.com",
-    relatedServiceSlug: "web-development",
+      "Avoid instant Section 3 suspensions. Professional end-to-end setup for non-resident and international founders with complete document pre-vetting, utility bill alignment, and tax interview clearance.",
+    clientUrl: "sellercentral.amazon.com",
+    relatedServiceSlug: "amazon-account-creation",
     services: [
-      "Logo and Brand System Design",
-      "Full UI/UX Digital Architecture",
-      "Custom Shopify 2.0 Storefront Build",
-      "Social Media Management & Virality",
+      "Dedicated Fresh Gmail & Account Security",
+      "Official Bank Statement 90-Day Alignment",
+      "Government Identity Proof (Passport / ID)",
+      "Official Utility Bill & Address Verification",
     ],
     results: [
-      { label: "Checkout Conversion Rate", value: "+4.8%" },
-      { label: "Global Order Fulfillment", value: "32+ Countries" },
-      { label: "Organic Monthly Visitors", value: "45K+" },
+      { label: "Approval Guarantee", value: "100%" },
+      { label: "Supported Countries", value: "10+" },
+      { label: "Section 3 Rejection", value: "0%" },
     ],
-    image: "/images/korean-skincare.jpg",
+    image: "/images/service-amazon.jpg",
     caseDetails: {
       challenge:
-        "The client had high quality Korean skincare products but suffered from slow page speeds and low mobile conversion rates with off-the-shelf templates.",
+        "Every document must be perfectly formatted and pre-audited to avoid automatic rejection and instant Day 1 Section 3 suspension by Amazon verification bots.",
       solution:
-        "X-One Hub designed a bespoke Shopify 2.0 storefront with instant search, curated skincare quiz funnels, and a rapid checkout drawer.",
+        "Our legal and account specialists inspect your ID, bank statement, and utility bill to ensure 100% character-by-character matching before submission.",
       outcome:
-        "Conversion surged by +4.8%, with 45K+ organic monthly visitors and seamless distribution across 32 countries.",
+        "100% active Seller Central account with green health status, completed W-8BEN tax interview, and live video verification coaching.",
     },
   },
   {
-    id: "clothing-thrift-stores",
+    id: "brand-approvals",
     number: "02",
-    title: "Clothing Thrift Stores",
-    category: "Brand Identity & Sustainable Packaging",
-    filterCategory: "branding",
-    tagline: "Contemporary eco-conscious fashion identity system",
+    title: "Amazon Brand Approvals & Ungating Packages",
+    category: "Guaranteed Amazon Brand Approvals",
+    filterCategory: "approvals",
+    tagline: "Official approvals to sell big brands on Amazon with real LOA & invoices",
     description:
-      "A bold, timeless visual identity for Clothing Thrift Stores, pairing sustainable values with editorial typography across physical packaging and digital touchpoints.",
-    clientUrl: "clothingthriftstores.co",
-    relatedServiceSlug: "graphic-design",
+      "Get official approvals to sell big brands on Amazon. We provide real Letter of Authorization (LOA), Brand Registry approval, Proforma Invoices, Paid Invoices, and complete account setup.",
+    clientUrl: "sellercentral.amazon.com/brands",
+    relatedServiceSlug: "brand-approvals",
     services: [
-      "Corporate Stationery & Dielines",
-      "Eco-Friendly Packaging & Unboxing",
-      "Custom Apparel Woven Labels & Tags",
-      "Digital Editorial Lookbooks",
+      "Letter of Authorization (LOA) Direct From Brand",
+      "Proforma & Paid Invoices with Company Name",
+      "Brand Registry Permissions Configuration",
+      "Full Ungating Setup Inside Seller Central",
     ],
     results: [
-      { label: "Brand Recall & Sentiment", value: "98.4%" },
-      { label: "Packaging Recyclability", value: "100%" },
-      { label: "Retail Footfall Surge", value: "+215%" },
+      { label: "Profit Margins", value: "20% to 70%" },
+      { label: "Processing Speed", value: "3 to 5 Days" },
+      { label: "Amazon Approval", value: "100% Safe" },
     ],
-    image: "/images/thrift-stores.jpg",
+    image: "/images/service-marketing.jpg",
     caseDetails: {
       challenge:
-        "Thrift fashion was perceived as disorganized. The brand needed an elevated editorial look that felt as premium as high-end designer boutiques.",
+        "Top-selling high-margin brands are gated on Amazon, and sellers get rejected when submitting invalid retail receipts or non-compliant paperwork.",
       solution:
-        "Crafted a minimalist visual language with bespoke typography, 100% recyclable cardboard unboxing experiences, and collectible merchandise tags.",
+        "We provide direct letters from brands giving official permission, alongside real distributor commercial invoices matching your exact business details.",
       outcome:
-        "A +215% surge in retail footfall and 98.4% brand sentiment across online and in-store customer reviews.",
+        "Fully unlocked selling permissions in Seller Central with safe approvals and 20% to 70% profit margin catalog access.",
     },
   },
   {
-    id: "comfort-shoes-smm",
+    id: "us-llc-formation",
     number: "03",
-    title: "Comfort Shoes SMM",
-    category: "Viral Social Media Marketing",
-    filterCategory: "marketing",
-    tagline: "Explosive organic outreach & non-follower conversion campaign",
+    title: "US LLC Formation (Wyoming, Florida & Texas)",
+    category: "#1 Choice for Non-Resident International Founders",
+    filterCategory: "llc",
+    tagline: "Turnkey US incorporation with Secretary of State filings & IRS EIN",
     description:
-      "A strategic social media marketing campaign focused on algorithmically driven short-form video hooks, achieving unprecedented virality and customer acquisition.",
-    clientUrl: "comfortshoes.com",
-    relatedServiceSlug: "digital-marketing",
+      "Zero hidden charges. Everything required to sell on Amazon US and open US bank accounts: state filing fee included, 1 full year registered agent, commercial address, federal IRS EIN without SSN, and FinCEN BOI filing.",
+    clientUrl: "sos.wyo.gov",
+    relatedServiceSlug: "wyoming-llc",
     services: [
-      "Viral Short-Form Video Production",
-      "Algorithmic Distribution Architecture",
-      "Influencer Seeding & Creative Strategy",
-      "Direct-Response Paid Retargeting",
+      "Secretary of State Filing Fee Included",
+      "Registered Agent Service (1 Full Year Included)",
+      "Official US Commercial Street Address (1 Year)",
+      "IRS Federal EIN (Tax ID) Without SSN",
     ],
     results: [
-      { label: "Views Increase", value: "+306%" },
-      { label: "Organic Reach Growth", value: "+347%" },
-      { label: "Views From Non-Followers", value: "91%" },
-      { label: "Non-Follower Reach", value: "1.5K+" },
-      { label: "User Interactions Increase", value: "+120%" },
+      { label: "State Income Tax", value: "0%" },
+      { label: "Formation Speed", value: "2-4 Days" },
+      { label: "Package Price", value: "$500 Flat" },
     ],
-    image: "/images/comfort-shoes.jpg",
+    image: "/images/service-web.jpg",
     caseDetails: {
       challenge:
-        "High ad fatigue and rising customer acquisition costs required an organic virality strategy that didn't depend solely on paid media spend.",
+        "International founders without a US visa or SSN face steep legal hurdles, complex state requirements, and bank onboarding rejections.",
       solution:
-        "Developed hook-driven reels and authentic customer comfort tests with kinetic editing that captured high algorithmic watch-time.",
+        "We handle the state filing, official agent appointments, federal tax IDs, and bank onboarding so you don't face any rejections.",
       outcome:
-        "Organic reach skyrocketed +347%, with 91% of viewership from brand-new non-followers and a 120% jump in web sales inquiries.",
+        "100% remote online setup with Articles of Organization, IRS EIN confirmation letter, and instant US bank account eligibility.",
+    },
+  },
+  {
+    id: "amazon-wholesale-fba",
+    number: "04",
+    title: "Complete Amazon Wholesale Account Management",
+    category: "Complete Wholesale FBA Operations",
+    filterCategory: "amazon",
+    tagline: "Direct brand purchasing, shipment plans & daily BuyBox repricing",
+    description:
+      "We handle everything for your Wholesale FBA business: direct brand purchasing, shipment plans with prep centers, and daily BuyBox account management.",
+    clientUrl: "sellercentral.amazon.com/fba",
+    relatedServiceSlug: "amazon-wholesale-fba",
+    services: [
+      "Direct Wholesale Accounts with Brands",
+      "Send-to-Amazon (STA) Inbound Shipment Plans",
+      "Prep Center Barcode & Box Labeling",
+      "Daily BuyBox Repricing & Inventory Restock",
+    ],
+    results: [
+      { label: "Months 1 & 2 Fee", value: "$300 / mo" },
+      { label: "Month 3 Onwards", value: "Profit %" },
+      { label: "Account Health", value: "100% Green" },
+    ],
+    image: "/images/service-amazon.jpg",
+    caseDetails: {
+      challenge:
+        "Running wholesale FBA requires continuous brand outreach, complex Send-to-Amazon prep plans, and constant price adjustments to win sales.",
+      solution:
+        "We take care of the heavy lifting from buying products with real commercial invoices to prep labels, inventory tracking, and daily repricing.",
+      outcome:
+        "Zero monthly retainer from Month 3 onwards! Once your sales are running, we only earn based on a percentage of net profit.",
     },
   },
 ];
@@ -132,7 +162,7 @@ interface OurWorkSectionProps {
 }
 
 export default function OurWorkSection({ onOpenQuote }: OurWorkSectionProps) {
-  const [activeFilter, setActiveFilter] = useState<"all" | "ecommerce" | "branding" | "marketing">("all");
+  const [activeFilter, setActiveFilter] = useState<"all" | "amazon" | "approvals" | "llc">("all");
   const [activeModalProject, setActiveModalProject] = useState<ProjectData | null>(null);
 
   const filteredProjects = projects.filter((p) =>

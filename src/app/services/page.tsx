@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import SiteLayout from "@/components/SiteLayout";
 import { servicesData, ServiceDetail } from "@/data/servicesData";
 import {
@@ -10,9 +11,6 @@ import {
   BarChart3,
   Briefcase,
   Building2,
-  Palette,
-  Code2,
-  Megaphone,
   Package,
   Tag,
   FileCheck2,
@@ -20,6 +18,8 @@ import {
   Sparkles,
   CheckCircle2,
   ChevronRight,
+  CreditCard,
+  Landmark,
 } from "lucide-react";
 
 const ICON_MAP: Record<string, React.ElementType> = {
@@ -35,24 +35,25 @@ const ICON_MAP: Record<string, React.ElementType> = {
   "wyoming-llc": Building2,
   "florida-llc": Building2,
   "texas-llc": Building2,
-  "digital-marketing": Megaphone,
-  "graphic-design": Palette,
-  "web-development": Code2,
+  "airwallex-account-setup": CreditCard,
+  "stripe-account-setup": CreditCard,
+  "wise-account-setup": CreditCard,
+  "payoneer-account-setup": CreditCard,
+  "chase-bank-setup": Landmark,
+  "bank-of-america-setup": Landmark,
 };
 
 const CATEGORY_COLORS: Record<string, { bg: string; badge: string; dot: string }> = {
   "Amazon Growth": { bg: "bg-orange-50 border-orange-200", badge: "bg-orange-100 text-orange-700 border border-orange-200", dot: "bg-orange-500" },
   "US Corporate": { bg: "bg-blue-50 border-blue-200", badge: "bg-blue-100 text-blue-700 border border-blue-200", dot: "bg-blue-500" },
-  "Creative Studio": { bg: "bg-purple-50 border-purple-200", badge: "bg-purple-100 text-purple-700 border border-purple-200", dot: "bg-purple-500" },
-  "Digital Marketing": { bg: "bg-green-50 border-green-200", badge: "bg-green-100 text-green-700 border border-green-200", dot: "bg-green-500" },
+  "Bank Account Creation": { bg: "bg-emerald-50 border-emerald-200", badge: "bg-emerald-100 text-emerald-700 border border-emerald-200", dot: "bg-emerald-500" },
 };
 
 const FILTERS = [
   { id: "all", label: "All Services" },
   { id: "Amazon Growth", label: "Amazon Growth" },
-  { id: "US Corporate", label: "US Corporate" },
-  { id: "Creative Studio", label: "Design & Web" },
-  { id: "Digital Marketing", label: "Marketing" },
+  { id: "US Corporate", label: "US LLC Formation" },
+  { id: "Bank Account Creation", label: "Bank Account Creation" },
 ];
 
 export default function AllServicesPage() {
@@ -86,7 +87,7 @@ export default function AllServicesPage() {
           </h1>
 
           <p className="mt-5 text-slate-600 text-lg max-w-2xl mx-auto font-light leading-relaxed">
-            From Amazon store setup and brand approvals to US LLC formation, logo design, and website development. Click any service to see exactly what&apos;s included.
+            From Amazon store setup and brand approvals to US LLC formation and tier-1 US business bank accounts. Click any service to see exactly what&apos;s included.
           </p>
 
           {/* Stats Strip */}
@@ -213,30 +214,44 @@ function ServiceCard({
   return (
     <Link
       href={`/services/${service.slug}`}
-      className="group flex flex-col rounded-3xl bg-white border border-slate-200 shadow-sm hover:border-purple-300 hover:shadow-[0_15px_40px_rgba(124,58,237,0.10)] transition-all duration-300 overflow-hidden"
+      className="group flex flex-col rounded-3xl bg-white border border-slate-200 shadow-sm hover:border-purple-300 hover:shadow-[0_15px_40px_rgba(124,58,237,0.12)] transition-all duration-300 overflow-hidden"
     >
-      {/* Top Band */}
-      <div className="px-7 pt-7 pb-5 border-b border-slate-100">
-        <div className="flex items-start justify-between gap-3">
-          <div className="w-12 h-12 rounded-2xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-700 group-hover:bg-purple-600 group-hover:text-white transition-all shadow-sm shrink-0">
-            <Icon className="w-6 h-6" />
+      {/* Themed Hero Image Banner */}
+      <div className="relative h-44 w-full overflow-hidden bg-slate-900/10">
+        <Image
+          src={service.heroImage}
+          alt={service.title}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+        <div className="absolute top-4 left-4">
+          <div className="w-10 h-10 rounded-xl bg-white/95 backdrop-blur-md border border-white/50 flex items-center justify-center text-purple-700 shadow-sm shrink-0">
+            <Icon className="w-5 h-5" />
           </div>
-          <span className={`shrink-0 text-[10px] font-mono font-bold px-2.5 py-1 rounded-full ${colors.badge}`}>
+        </div>
+        <div className="absolute top-4 right-4">
+          <span className={`text-[10px] font-mono font-bold px-2.5 py-1 rounded-full backdrop-blur-md bg-white/95 shadow-sm ${colors.badge}`}>
             {service.categoryBadge}
           </span>
         </div>
+        <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white text-xs font-mono">
+          <span className="bg-purple-600/90 backdrop-blur-md px-2.5 py-0.5 rounded-full font-bold">
+            {service.number}
+          </span>
+          <span className="bg-black/60 backdrop-blur-md px-2.5 py-0.5 rounded-full">
+            {service.category}
+          </span>
+        </div>
+      </div>
 
-        <div className="mt-4">
-          <div className="flex items-center gap-1.5 mb-1">
-            <span className={`w-1.5 h-1.5 rounded-full ${colors.dot}`} />
-            <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400">
-              {service.category}
-            </span>
-          </div>
+      {/* Top Band */}
+      <div className="px-7 pt-5 pb-4 border-b border-slate-100">
+        <div>
           <h2 className="font-display font-black text-lg text-[#0f0f17] group-hover:text-purple-700 transition-colors leading-tight">
             {service.title}
           </h2>
-          <p className="mt-1 text-sm text-slate-600 font-light leading-relaxed">
+          <p className="mt-1.5 text-xs text-slate-600 font-light leading-relaxed line-clamp-2">
             {service.tagline}
           </p>
         </div>

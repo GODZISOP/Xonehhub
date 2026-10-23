@@ -20,9 +20,8 @@ import {
   FileCheck2,
   Tag,
   Building2,
-  Megaphone,
-  Palette,
-  Code2,
+  CreditCard,
+  Landmark,
 } from "lucide-react";
 
 interface NavbarProps {
@@ -51,19 +50,22 @@ const SERVICES_DROPDOWN = [
     color: "text-blue-600",
     dot: "bg-blue-500",
     items: [
-      { label: "Wyoming LLC — $350", href: "/services/wyoming-llc", icon: Building2 },
+      { label: "Wyoming LLC — $500", href: "/services/wyoming-llc", icon: Building2 },
       { label: "Florida LLC — $500", href: "/services/florida-llc", icon: Building2 },
       { label: "Texas LLC — $550", href: "/services/texas-llc", icon: Building2 },
     ],
   },
   {
-    category: "Design & Marketing",
-    color: "text-purple-700",
-    dot: "bg-purple-600",
+    category: "Bank Account Creation",
+    color: "text-emerald-600",
+    dot: "bg-emerald-500",
     items: [
-      { label: "Digital Marketing", href: "/services/digital-marketing", icon: Megaphone },
-      { label: "Graphic Design & Branding", href: "/services/graphic-design", icon: Palette },
-      { label: "Web Development", href: "/services/web-development", icon: Code2 },
+      { label: "Stripe Account — $100", href: "/services/stripe-account-setup", icon: CreditCard },
+      { label: "Wise Account — $100", href: "/services/wise-account-setup", icon: CreditCard },
+      { label: "Payoneer Account — $100", href: "/services/payoneer-account-setup", icon: CreditCard },
+      { label: "Airwallex Account — $100", href: "/services/airwallex-account-setup", icon: CreditCard },
+      { label: "Chase Bank Setup — $1,500", href: "/services/chase-bank-setup", icon: Landmark },
+      { label: "Bank of America — $1,500", href: "/services/bank-of-america-setup", icon: Landmark },
     ],
   },
 ];

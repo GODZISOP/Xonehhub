@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import { getServiceBySlug, servicesData } from "@/data/servicesData";
 import ServiceDetailClient from "@/components/ServiceDetailClient";
 
+export const instant = false;
+
 export async function generateStaticParams() {
   return servicesData.map((s) => ({
     slug: s.slug,
