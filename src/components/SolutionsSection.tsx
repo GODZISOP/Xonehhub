@@ -44,7 +44,7 @@ const services: ServiceItem[] = [
     tagline: "Boost customer trust and increase listing conversions up to 20%",
     description:
       "Premium Enhanced Brand Content and visual storytelling designed to highlight your product benefits, answer customer questions, and win the buy box against competitors.",
-    image: "/images/service-design.jpg",
+    image: "/images/brand-approvals.jpg",
     icon: FileCheck2,
     highlight: "Conversion Booster",
     tags: ["High-Res Visuals", "Comparison Tables", "Brand Story", "+20% Conversion"],
@@ -64,7 +64,7 @@ const services: ServiceItem[] = [
     tagline: "End-to-end verified Amazon Seller Central registration",
     description:
       "We set up your US Amazon Seller Central account properly from day one with verified business registration, EIN tax details, utility bills, and video verification support.",
-    image: "/images/service-amazon.jpg",
+    image: "/images/amazon-account-creation.jpg",
     icon: ShoppingCart,
     highlight: "Guaranteed Setup",
     tags: ["Seller Central", "EIN & Tax Help", "Document Verification", "100% Compliant"],
@@ -84,7 +84,7 @@ const services: ServiceItem[] = [
     tagline: "100% hands-free Amazon store management from sourcing to sales",
     description:
       "We handle product hunting, supplier negotiation, shipping logistics, inventory replenishment, and daily customer service so you can scale your store hands-free.",
-    image: "/images/hero-2.jpg",
+    image: "/images/amazon-wholesale-fba.jpg",
     icon: Package,
     highlight: "Turnkey Scaling",
     tags: ["100% Hands-Free", "Inventory Logistics", "Supplier Sourcing", "Daily Operations"],
@@ -104,7 +104,7 @@ const services: ServiceItem[] = [
     tagline: "Lower your ad costs (TACoS) and maximize your daily sales",
     description:
       "We structure Sponsored Products, Sponsored Brands, and Sponsored Display ads. We continuously harvest profitable keywords and eliminate wasted ad spend.",
-    image: "/images/hero-3.jpg",
+    image: "/images/service-marketing.jpg",
     icon: BarChart3,
     highlight: "High ROAS",
     tags: ["Sponsored Products", "Sponsored Brands", "Keyword Harvesting", "Low TACoS"],
@@ -124,7 +124,7 @@ const services: ServiceItem[] = [
     tagline: "Form your US company with zero state income tax & full privacy",
     description:
       "Everything you need as an international founder: Articles of Organization, 1-year Registered Agent, EIN tax ID, Operating Agreement, and US bank account guidance.",
-    image: "/images/service-web.jpg",
+    image: "/images/wyoming-llc.jpg",
     icon: Building2,
     highlight: "$350 All-Inclusive",
     tags: ["0% State Income Tax", "EIN Tax ID", "Registered Agent", "US Bank Guidance"],
@@ -144,7 +144,7 @@ const services: ServiceItem[] = [
     tagline: "High-speed custom e-commerce storefronts engineered for conversion",
     description:
       "We design bespoke Shopify 2.0 and Next.js digital storefronts with sub-second page loads, conversion-optimized checkout funnels, and mobile-first UX.",
-    image: "/images/korean-skincare.jpg",
+    image: "/images/service-web.jpg",
     icon: Code2,
     highlight: "Sub-Second Speed",
     tags: ["Shopify 2.0", "Next.js Architecture", "Mobile First", "High Conversion"],
