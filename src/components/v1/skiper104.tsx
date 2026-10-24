@@ -90,9 +90,10 @@ export const ScrollRevealCard: React.FC<ScrollRevealCardProps> = ({
   const isHovered = hoveredIndex === index;
   const Icon = step.icon;
 
-  // Staggered trigger thresholds
-  const start = index === 0 ? 0 : (index / (total - 1)) * 0.75;
-  const end = Math.min(1, start + 0.35);
+  // Compact staggered trigger thresholds so all 4 steps complete while in view
+  const thresholds = [0, 0.22, 0.48, 0.70];
+  const start = thresholds[index] ?? (index / (total - 1)) * 0.7;
+  const end = Math.min(1, start + 0.25);
 
   // 3D Scroll Reveal transforms
   const scrollScale = useTransform(progress, [start, end], [0.93, 1]);
@@ -297,20 +298,23 @@ export const Skiper104: React.FC<Skiper104Props> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  // Scroll progression tracker
+  // Scroll progression tracker calibrated to complete while the section is centered in viewport
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 80%", "end 45%"],
+    offset: ["start 75%", "center 50%"],
   });
 
   const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 240,
+    stiffness: 260,
     damping: 30,
-    mass: 0.2,
+    mass: 0.18,
   });
 
   // Dynamic width of the active purple line filling from left to right
   const progressLineWidth = useTransform(smoothProgress, [0, 1], ["0%", "100%"]);
+
+  // Compact step thresholds so 1 -> 2 -> 3 -> 4 sequence finishes comfortably in view
+  const badgeThresholds = [0, 0.22, 0.48, 0.72];
 
   return (
     <div ref={containerRef} className={`w-full relative ${className}`}>
@@ -327,19 +331,16 @@ export const Skiper104: React.FC<Skiper104Props> = ({
 
         {/* 4 Numbered Square Badges Resting Directly on the Line */}
         <div className="grid grid-cols-4 relative z-10">
-          {steps.map((_, idx) => {
-            const stepThreshold = idx === 0 ? 0 : (idx / (steps.length - 1)) * 0.75;
-            return (
-              <TimelineBadge
-                key={idx}
-                index={idx}
-                progress={smoothProgress}
-                threshold={stepThreshold}
-                isHovered={hoveredIndex === idx}
-                onClick={() => setHoveredIndex(idx)}
-              />
-            );
-          })}
+          {steps.map((_, idx) => (
+            <TimelineBadge
+              key={idx}
+              index={idx}
+              progress={smoothProgress}
+              threshold={badgeThresholds[idx] ?? 0.7}
+              isHovered={hoveredIndex === idx}
+              onClick={() => setHoveredIndex(idx)}
+            />
+          ))}
         </div>
       </div>
 
@@ -393,7 +394,10 @@ function TimelineBadge({
     <div className="flex flex-col items-center justify-center">
       <motion.button
         type="button"
-        onClick={onClick}
+        onClick={(e) => {
+          e.preventDefault();
+          onClick();
+        }}
         animate={{
           scale: isHovered ? 1.25 : isCurrentOrHovered ? 1.1 : 0.95,
         }}
@@ -409,14 +413,14 @@ function TimelineBadge({
         {index + 1}
       </motion.button>
 
-      {/* Downward Connector Guide Stem */}
+      {/* Downward Connector Guide Stem (zero-layout-shift with transform scaleY) */}
       <motion.div
         animate={{
-          height: isHovered ? 16 : isCurrentOrHovered ? 12 : 8,
-          opacity: isCurrentOrHovered ? 1 : 0.3,
+          scaleY: isHovered ? 1.4 : isCurrentOrHovered ? 1.1 : 0.7,
+          opacity: isCurrentOrHovered ? 1 : 0.35,
           backgroundColor: isCurrentOrHovered ? "#9333ea" : "#e9d5ff",
         }}
-        className="w-[2px] mt-1.5 rounded-full transition-all duration-300"
+        className="w-[2px] h-3 mt-1.5 rounded-full origin-top transition-colors duration-300"
       />
     </div>
   );
