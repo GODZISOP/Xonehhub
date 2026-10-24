@@ -171,7 +171,6 @@ export const defaultParallaxServices: ParallaxServiceItem[] = [
     capabilities: ["360 product visual angles", "Photorealistic lighting", "High-res commercial assets"],
   },
 
-  // ── Column 4: Digital Storefronts & Tech ──
   {
     id: "web-development",
     slug: "web-development",
