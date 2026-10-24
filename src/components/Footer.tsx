@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { ArrowUp, Mail, Phone, MessageCircle, MapPin, Sparkles } from "lucide-react";
+import AnimatedFooter from "@/components/ui/animated-footer";
 
 interface FooterProps {
   onOpenQuote: () => void;
@@ -19,6 +20,21 @@ export default function Footer({ onOpenQuote }: FooterProps) {
       <div className="ambient-glow w-[500px] h-[500px] -bottom-24 left-1/2 -translate-x-1/2 bg-purple-700/10" />
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-10 z-10">
+        {/* ── VengeanceUI Animated ASCII Hands & Reveal Heading (Above content, seamless without box) ── */}
+        <div className="relative w-full h-[320px] sm:h-[400px] md:h-[480px] overflow-hidden mb-12">
+          <AnimatedFooter
+            headingLines={["XONEHUB"]}
+            leftImage="/animated-footer/hand-left.jpg"
+            rightImage="/animated-footer/hand-right.jpg"
+            background="transparent"
+            textColor="#ffffff"
+            charColor="#7c3aed"
+            hoverColor="#c084fc"
+            hoverCharColor="#ffffff"
+            revealOnScroll={true}
+          />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-white/[0.08]">
           {/* Brand Info */}
           <div className="lg:col-span-5 space-y-6">
