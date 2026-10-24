@@ -10,18 +10,10 @@ import {
 } from "framer-motion";
 
 export const WHEEL_ITEMS = [
-  "8-figure Amazon storefronts",
-  "verified Seller Central accounts",
-  "high-converting A+ Content & EBC",
-  "algorithmic Amazon PPC campaigns",
-  "profitable Wholesale FBA pipelines",
-  "compliant US LLC company formations",
-  "US business bank accounts (Chase & BoA)",
-  "brand ungating & LOA authorizations",
-  "trademark & Amazon Brand Registry",
-  "global financial rails (Stripe & Wise)",
-  "hands-free FBA store automation",
-  "sustainable Amazon revenue scale",
+  "Amazon Brands",
+  "High-ROI PPC Campaigns",
+  "Complete Brand Identities",
+  "Modern Web Architectures",
 ];
 
 interface WheelRowProps {
@@ -48,26 +40,26 @@ const WheelRow: React.FC<WheelRowProps> = ({
   const opacity = useTransform(
     scrollYProgress,
     [
-      center - step * 2.2,
-      center - step,
+      center - step * 1.6,
+      center - step * 0.8,
       center,
-      center + step,
-      center + step * 2.2,
+      center + step * 0.8,
+      center + step * 1.6,
     ],
-    [0.08, 0.35, 1, 0.35, 0.08]
+    [0.08, 0.38, 1, 0.38, 0.08]
   );
 
   // Compute blur filter
   const blurVal = useTransform(
     scrollYProgress,
     [
-      center - step * 2.2,
-      center - step,
+      center - step * 1.6,
+      center - step * 0.8,
       center,
-      center + step,
-      center + step * 2.2,
+      center + step * 0.8,
+      center + step * 1.6,
     ],
-    [10, 3.5, 0, 3.5, 10]
+    [8, 3, 0, 3, 8]
   );
   const filter = useTransform(blurVal, (v) => `blur(${v}px)`);
 
@@ -75,13 +67,13 @@ const WheelRow: React.FC<WheelRowProps> = ({
   const scale = useTransform(
     scrollYProgress,
     [
-      center - step * 2,
-      center - step,
+      center - step * 1.5,
+      center - step * 0.7,
       center,
-      center + step,
-      center + step * 2,
+      center + step * 0.7,
+      center + step * 1.5,
     ],
-    [0.92, 0.97, 1.03, 0.97, 0.92]
+    [0.94, 0.98, 1.02, 0.98, 0.94]
   );
 
   return (
@@ -95,7 +87,7 @@ const WheelRow: React.FC<WheelRowProps> = ({
       }}
       className="flex items-center text-left select-none cursor-pointer origin-left transition-colors duration-300"
     >
-      <span className="font-display font-black text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tight text-white whitespace-nowrap drop-shadow-[0_0_30px_rgba(168,85,247,0.35)]">
+      <span className="font-display font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight text-white whitespace-nowrap drop-shadow-[0_0_25px_rgba(168,85,247,0.35)]">
         {text}
       </span>
     </motion.div>
@@ -109,17 +101,16 @@ export interface Skiper44Props {
 
 /**
  * Skiper44 - Vercel Scroll with Blur (Wheel Scroll with Blur)
- * Clean, minimal layout matching the exact reference:
- * Left: "We Design" (fixed, horizontally aligned)
- * Right: Vertical rolling wheel with blur and scaling transformations on scroll.
- * Zero cluttered top/bottom boxes.
+ * Clean, minimal layout:
+ * Left: "We Scale" (fixed, horizontally aligned)
+ * Right: Vertical rolling wheel with 4 core services, no overflow.
  */
 export const Skiper44: React.FC<Skiper44Props> = ({ className = "" }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const items = WHEEL_ITEMS;
   const totalItems = items.length;
 
-  const ITEM_HEIGHT = 88; // px
+  const ITEM_HEIGHT = 76; // px
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -152,39 +143,39 @@ export const Skiper44: React.FC<Skiper44Props> = ({ className = "" }) => {
     <section
       ref={containerRef}
       id="capabilities-wheel"
-      className={`relative h-[300vh] w-full bg-[#050508] text-white selection:bg-purple-600 ${className}`}
+      className={`relative h-[200vh] w-full bg-[#050508] text-white selection:bg-purple-600 ${className}`}
     >
       {/* ── Sticky Scene Viewport (h-screen) ── */}
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
         {/* Subtle Ambient Radial Purple Glow Behind Center Text */}
-        <div className="absolute w-[650px] h-[650px] rounded-full bg-purple-700/20 blur-[150px] pointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute w-[600px] h-[600px] rounded-full bg-purple-700/20 blur-[140px] pointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
         <div className="absolute inset-0 bg-[radial-gradient(#272733_1px,transparent_1px)] [background-size:28px_28px] opacity-20 pointer-events-none" />
 
         {/* ── Main Stage: "We Scale" + Rolling Wheel ── */}
-        <div className="relative z-20 max-w-7xl w-full mx-auto px-6 sm:px-10 md:px-12 flex flex-col md:flex-row items-center justify-center gap-3 sm:gap-5 md:gap-7">
+        <div className="relative z-20 max-w-6xl w-full mx-auto px-6 sm:px-10 flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 overflow-hidden">
           {/* Left: Fixed "We Scale" */}
           <div className="shrink-0 flex items-center">
-            <h2 className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-white whitespace-nowrap leading-none select-none">
+            <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-white whitespace-nowrap leading-none select-none">
               We Scale
             </h2>
           </div>
 
           {/* Right: Rolling Wheel with Gradient Blur Mask */}
           <div
-            className="relative overflow-hidden w-full md:w-auto"
+            className="relative overflow-hidden w-full md:w-auto flex-1 max-w-xl lg:max-w-2xl"
             style={{
-              height: ITEM_HEIGHT * 5, // Shows 5 rows (2 above, 1 center, 2 below)
+              height: ITEM_HEIGHT * 3, // Shows 3 rows (1 above, 1 center, 1 below)
               maskImage:
-                "linear-gradient(to bottom, transparent 0%, black 28%, black 72%, transparent 100%)",
+                "linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%)",
               WebkitMaskImage:
-                "linear-gradient(to bottom, transparent 0%, black 28%, black 72%, transparent 100%)",
+                "linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%)",
             }}
           >
             {/* Scrolling Wheel Column */}
             <motion.div
               style={{
                 y: wheelY,
-                paddingTop: ITEM_HEIGHT * 2, // Centers the 1st item horizontally with "We Design"
+                paddingTop: ITEM_HEIGHT * 1, // Centers the 1st item horizontally with "We Scale"
               }}
               className="relative z-10 flex flex-col"
             >
@@ -206,3 +197,4 @@ export const Skiper44: React.FC<Skiper44Props> = ({ className = "" }) => {
     </section>
   );
 };
+export default Skiper44;
