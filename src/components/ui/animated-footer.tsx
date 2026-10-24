@@ -110,35 +110,39 @@ function buildHandCells(
   const sampler = document.createElement("canvas");
   sampler.width = columns;
   sampler.height = rows;
-  const sampleCtx = sampler.getContext("2d");
+  const sampleCtx = sampler.getContext("2d", { willReadFrequently: true });
   const cells = new Map<string, Cell>();
   if (!sampleCtx) return { rows, cells };
 
-  sampleCtx.drawImage(image, 0, 0, columns, rows);
-  const pixels = sampleCtx.getImageData(0, 0, columns, rows).data;
-  const backgroundCharIndex = asciiChars.lastIndexOf(".");
+  try {
+    sampleCtx.drawImage(image, 0, 0, columns, rows);
+    const pixels = sampleCtx.getImageData(0, 0, columns, rows).data;
+    const backgroundCharIndex = asciiChars.lastIndexOf(".");
 
-  for (let row = 0; row < rows; row++) {
-    for (let col = 0; col < columns; col++) {
-      const offset = (row * columns + col) * 4;
-      const brightness =
-        (pixels[offset] * 0.299 +
-          pixels[offset + 1] * 0.587 +
-          pixels[offset + 2] * 0.114) /
-        255;
-      const charIndex = Math.min(
-        asciiChars.length - 1,
-        Math.floor((1 - brightness) * asciiChars.length),
-      );
-      if (charIndex <= backgroundCharIndex) continue;
+    for (let row = 0; row < rows; row++) {
+      for (let col = 0; col < columns; col++) {
+        const offset = (row * columns + col) * 4;
+        const brightness =
+          (pixels[offset] * 0.299 +
+            pixels[offset + 1] * 0.587 +
+            pixels[offset + 2] * 0.114) /
+          255;
+        const charIndex = Math.min(
+          asciiChars.length - 1,
+          Math.floor((1 - brightness) * asciiChars.length),
+        );
+        if (charIndex <= backgroundCharIndex) continue;
 
-      cells.set(`${col},${row}`, {
-        col,
-        row,
-        char: asciiChars[charIndex],
-        highlightEndTime: 0,
-      });
+        cells.set(`${col},${row}`, {
+          col,
+          row,
+          char: asciiChars[charIndex],
+          highlightEndTime: 0,
+        });
+      }
     }
+  } catch (err) {
+    console.error("buildHandCells error:", err);
   }
 
   return { rows, cells };
@@ -288,22 +292,29 @@ export function AnimatedFooter({
       });
     };
 
-    const loadHand = (src: string, canvas: HTMLCanvasElement, direction: 1 | -1) => {
-      if (!src) return;
+    const loadHand = (src: string, canvas: HTMLCanvasElement | null, direction: 1 | -1) => {
+      if (!src || !canvas) return;
       const image = new Image();
-      image.crossOrigin = "anonymous";
+      if (src.startsWith("http://") || src.startsWith("https://")) {
+        image.crossOrigin = "anonymous";
+      }
       let initialized = false;
       const init = () => {
         if (initialized) return;
         initialized = true;
-        setupHand(image, canvas, direction);
+        try {
+          setupHand(image, canvas, direction);
+        } catch (e) {
+          console.error("setupHand error:", e);
+        }
       };
       image.onload = init;
+      image.onerror = (err) => console.error("Failed to load ASCII hand:", src, err);
       image.src = src;
-      if (image.complete && image.naturalWidth) init();
+      if (image.complete && image.naturalWidth > 0) init();
     };
-    loadHand(leftImage, leftCanvasRef.current!, 1);
-    loadHand(rightImage, rightCanvasRef.current!, -1);
+    loadHand(leftImage, leftCanvasRef.current, 1);
+    loadHand(rightImage, rightCanvasRef.current, -1);
 
     const renderHand = (hand: Hand, now: number) => {
       const { ctx, cellList, cellSize: cs, baselineOffset, columns: cols, rows } = hand;
@@ -452,9 +463,16 @@ export function AnimatedFooter({
             }
           }
         },
-        { root: getScrollParent(root), threshold: 0.35 },
+        { root: null, threshold: 0.1, rootMargin: "0px 0px -20px 0px" },
       );
       observer.observe(root);
+
+      // Check if already in viewport on mount (e.g. refreshed or scrolled)
+      const rect = root.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        isRevealed = true;
+        animateIn();
+      }
     } else {
       showAll();
     }
