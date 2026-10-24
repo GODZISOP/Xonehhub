@@ -24,11 +24,11 @@ export default function Footer({ onOpenQuote }: FooterProps) {
           <div className="lg:col-span-5 space-y-6">
             <div className="flex items-center gap-3">
               <Image
-                src="/logo.png"
-                alt="X ONE HUB"
-                width={140}
-                height={56}
-                className="h-10 md:h-12 w-auto object-contain mix-blend-screen drop-shadow-[0_0_20px_rgba(168,85,247,0.35)]"
+                src="/logo-horizontal-white.png"
+                alt="XoneHub"
+                width={200}
+                height={50}
+                className="h-10 md:h-12 w-auto object-contain drop-shadow-[0_0_25px_rgba(168,85,247,0.4)]"
               />
             </div>
 

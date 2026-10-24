@@ -126,18 +126,16 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 flex items-center justify-between gap-3">
-          {/* ── Logo ── */}
-          <Link href="/" className="group flex items-center gap-2 select-none shrink-0">
-            <div className="bg-[#0f0f17] px-3 py-1.5 rounded-xl border border-purple-300/40 shadow-sm flex items-center transition-transform duration-300 group-hover:scale-105">
-              <Image
-                src="/logo.png"
-                alt="X ONE HUB"
-                width={120}
-                height={40}
-                className="h-7 sm:h-8 md:h-9 w-auto object-contain"
-                priority
-              />
-            </div>
+          {/* ── Logo (Without background) ── */}
+          <Link href="/" className="group flex items-center select-none shrink-0 transition-transform duration-300 hover:scale-105" aria-label="XoneHub Home">
+            <Image
+              src="/logo-horizontal.png"
+              alt="XoneHub"
+              width={180}
+              height={44}
+              className="h-8 sm:h-9 md:h-10 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* ── Desktop Nav (lg:flex) ── */}
@@ -298,9 +296,9 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
         >
           {/* Drawer Header */}
           <div className="flex items-center justify-between p-4 sm:p-5 border-b border-purple-100">
-            <div className="bg-[#0f0f17] px-3 py-1.5 rounded-xl">
-              <Image src="/logo.png" alt="X ONE HUB" width={100} height={36} className="h-7 w-auto object-contain" />
-            </div>
+            <Link href="/" onClick={() => setMobileMenuOpen(false)} aria-label="XoneHub Home">
+              <Image src="/logo-horizontal.png" alt="XoneHub" width={150} height={36} className="h-8 w-auto object-contain" />
+            </Link>
             <button
               onClick={() => setMobileMenuOpen(false)}
               className="p-2 rounded-xl text-slate-500 hover:bg-slate-100 hover:text-purple-700 transition-colors"

@@ -105,13 +105,13 @@ export default function IntroLoader({ onComplete }: IntroLoaderProps) {
             </span>
           </div>
 
-          <div className="bg-[#0f0f17] px-4 py-2 rounded-xl shadow-md border border-purple-300/40 flex items-center justify-center">
+          <div className="bg-[#0b0b10] px-4 py-2 rounded-2xl shadow-md border border-purple-400/40 flex items-center justify-center">
             <Image
-              src="/logo.png"
-              alt="X ONE HUB"
-              width={140}
-              height={50}
-              className="h-7 w-auto object-contain"
+              src="/logo-horizontal-white.png"
+              alt="XoneHub"
+              width={160}
+              height={44}
+              className="h-8 w-auto object-contain"
               priority
             />
           </div>
