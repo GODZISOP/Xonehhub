@@ -9,7 +9,6 @@ import {
   MessageCircle,
   MapPin,
   Clock,
-  Sparkles,
   ArrowUpRight,
   Send,
   CheckCircle2,
@@ -98,7 +97,7 @@ export default function ContactPage() {
             <span className="text-purple-700 font-semibold">Contact Us</span>
           </div>
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-50 border border-purple-200 text-purple-700 font-mono text-xs font-bold uppercase tracking-widest mb-5">
-            <Sparkles className="w-3.5 h-3.5" />
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             Direct Studio Access
           </div>
           <h1 className="font-display font-black text-4xl sm:text-6xl text-[#0f0f17] tracking-tight">

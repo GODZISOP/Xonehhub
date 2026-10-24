@@ -8,7 +8,7 @@ import {
   ArrowUpRight,
   Menu,
   X,
-  Sparkles,
+  Layers,
   Phone,
   Mail,
   MessageCircle,
@@ -244,10 +244,9 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Desktop Contact Us CTA */}
             <MagneticButton onClick={onOpenQuote} dataCursor="Talk">
-              <button className="hidden sm:flex relative group overflow-hidden px-4 md:px-5 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 text-white font-medium text-xs md:text-sm tracking-wide shadow-[0_4px_20px_rgba(124,58,237,0.35)] hover:shadow-[0_6px_25px_rgba(124,58,237,0.5)] transition-all duration-300 items-center gap-2">
+              <button className="hidden sm:flex relative group overflow-hidden px-5 md:px-6 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 text-white font-medium text-xs md:text-sm tracking-wide shadow-[0_4px_20px_rgba(124,58,237,0.35)] hover:shadow-[0_6px_25px_rgba(124,58,237,0.5)] transition-all duration-300 items-center gap-2">
                 <span className="relative z-10 flex items-center gap-1.5 font-display font-semibold">
-                  <Sparkles className="w-3.5 h-3.5 text-purple-200" />
-                  Contact Us
+                  <span>Contact Us</span>
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </span>
               </button>
@@ -326,7 +325,7 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
                 className="w-full flex items-center justify-between py-2.5 px-3 rounded-xl font-display font-bold text-base text-purple-900 transition-all"
               >
                 <div className="flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-purple-600" />
+                  <Layers className="w-4 h-4 text-purple-600" />
                   <span>All Services (15)</span>
                 </div>
                 <ChevronDown
@@ -414,7 +413,6 @@ export default function Navbar({ onOpenQuote }: NavbarProps) {
               }}
               className="w-full py-3.5 rounded-full bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 text-white font-display font-bold text-sm flex items-center justify-center gap-2 shadow-[0_4px_15px_rgba(124,58,237,0.35)] active:scale-98 transition-all"
             >
-              <Sparkles className="w-4 h-4 text-purple-200" />
               <span>Contact Us Now</span>
               <ArrowUpRight className="w-4 h-4" />
             </button>

@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import MagneticButton from "./ui/MagneticButton";
-import { ArrowUpRight, Sparkles, TrendingUp, ShieldCheck, CheckCircle2, Star } from "lucide-react";
+import { ArrowUpRight, TrendingUp, ShieldCheck, CheckCircle2, Star } from "lucide-react";
 
 interface HeroSectionProps {
   onOpenQuote: () => void;
@@ -72,7 +72,7 @@ export default function HeroSection({ onOpenQuote }: HeroSectionProps) {
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-purple-200/90 shadow-sm mb-5"
         >
           <span className="flex items-center justify-center w-5 h-5 rounded-full bg-purple-600 text-white shadow-xs">
-            <Sparkles className="w-3 h-3 text-white" />
+            <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
           </span>
           <span className="text-xs sm:text-sm font-semibold text-purple-900 tracking-wide">
             One Time Is Enough
@@ -112,7 +112,7 @@ export default function HeroSection({ onOpenQuote }: HeroSectionProps) {
 
               {/* Right Pointer Speech Tag: 'Reliable' */}
               <span className="relative inline-flex items-center gap-1 px-3 py-1 rounded-full bg-purple-100/90 backdrop-blur-sm text-purple-700 text-xs sm:text-sm font-semibold tracking-wide border border-purple-200/90 shadow-xs animate-bounce-subtle">
-                <Sparkles className="w-3 h-3 text-purple-600" />
+                <CheckCircle2 className="w-3 h-3 text-purple-600" />
                 <span>Reliable</span>
                 <svg
                   className="absolute -bottom-1.5 left-3 w-2.5 h-2 text-purple-100"
@@ -147,8 +147,7 @@ export default function HeroSection({ onOpenQuote }: HeroSectionProps) {
           <MagneticButton onClick={onOpenQuote} dataCursor="Talk">
             <button className="group relative overflow-hidden px-8 py-3.5 rounded-full bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 text-white font-display font-bold text-sm sm:text-base tracking-wide shadow-[0_10px_35px_rgba(124,58,237,0.35)] hover:shadow-[0_15px_45px_rgba(124,58,237,0.5)] transition-all duration-300 flex items-center gap-2.5">
               <span className="relative z-10 flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-purple-200" />
-                Contact Us
+                <span>Contact Us</span>
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </span>
               <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />

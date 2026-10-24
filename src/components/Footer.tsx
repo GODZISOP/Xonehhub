@@ -57,7 +57,6 @@ export default function Footer({ onOpenQuote }: FooterProps) {
                 onClick={onOpenQuote}
                 className="px-5 py-2.5 rounded-full bg-purple-600 hover:bg-purple-500 text-white font-medium text-xs flex items-center gap-2 shadow-[0_0_20px_rgba(147,51,234,0.35)] transition-colors"
               >
-                <Sparkles className="w-3.5 h-3.5 text-purple-200" />
                 <span>Contact Us</span>
               </button>
               <a
