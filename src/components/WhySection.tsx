@@ -1,13 +1,39 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useRef } from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
 import SectionLabel from "./ui/SectionLabel";
 import MagneticButton from "./ui/MagneticButton";
-import { ArrowUpRight, Flame, Layers, Eye, Zap, X, Sparkles, CheckCircle2 } from "lucide-react";
+import { CharacterV1, CharacterV3, ScrollParagraph3D } from "./v1/skiper31";
+import {
+  ArrowUpRight,
+  Flame,
+  Layers,
+  Eye,
+  Zap,
+  X,
+  Sparkles,
+  CheckCircle2,
+} from "lucide-react";
 
 export default function WhySection() {
   const [visionsModalOpen, setVisionsModalOpen] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // Skiper UI #31: Scroll-driven 3D perspective animation
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start 80%", "end 70%"],
+  });
+
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 280,
+    damping: 28,
+    mass: 0.15,
+  });
+
+  const titleChars = "WHY X-ONE HUB".split("");
+  const titleCenterIndex = Math.floor(titleChars.length / 2);
 
   const pillars = [
     {
@@ -32,8 +58,19 @@ export default function WhySection() {
     },
   ];
 
+  const pillarBadges = [
+    { label: "Purposeful", icon: Layers },
+    { label: "Converting", icon: Flame },
+    { label: "Branding", icon: Eye },
+    { label: "Fast Comms", icon: Zap },
+  ];
+
   return (
-    <section id="why-us" className="relative py-28 md:py-36 bg-white overflow-hidden border-t border-purple-100">
+    <section
+      id="why-us"
+      ref={sectionRef}
+      className="relative py-28 md:py-36 bg-white overflow-hidden border-t border-purple-100"
+    >
       {/* Background Animated Glows */}
       <motion.div
         animate={{
@@ -51,8 +88,52 @@ export default function WhySection() {
       <div className="relative max-w-7xl mx-auto px-6 md:px-10 z-10">
         <SectionLabel number="03" text="Why Choose Us" />
 
+        {/* ── Skiper UI #31: 3D Perspective Character Scroll Banner ── */}
+        <div
+          className="w-full text-center pt-8 pb-10 select-none overflow-hidden"
+          style={{ perspective: "700px" }}
+        >
+          <div className="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight uppercase inline-flex flex-wrap justify-center items-center gap-x-1 sm:gap-x-2">
+            {titleChars.map((char, index) => (
+              <CharacterV1
+                key={index}
+                char={char}
+                index={index}
+                centerIndex={titleCenterIndex}
+                scrollYProgress={smoothProgress}
+                className={
+                  index >= 4
+                    ? "text-transparent bg-clip-text bg-gradient-to-r from-purple-700 via-purple-600 to-indigo-600 drop-shadow-sm"
+                    : "text-slate-900"
+                }
+              />
+            ))}
+          </div>
+
+          {/* 3D Perspective Floating Capability Badges (CharacterV3) */}
+          <div
+            className="mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-4"
+            style={{ perspective: "500px" }}
+          >
+            {pillarBadges.map((badge, idx) => {
+              const IconComponent = badge.icon;
+              return (
+                <CharacterV3
+                  key={badge.label}
+                  index={idx}
+                  centerIndex={Math.floor(pillarBadges.length / 2)}
+                  scrollYProgress={smoothProgress}
+                  icon={<IconComponent className="w-5 h-5 text-purple-600" />}
+                  label={badge.label}
+                  className="px-4 py-2 border-purple-200/80 hover:border-purple-400 bg-purple-50/60"
+                />
+              );
+            })}
+          </div>
+        </div>
+
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column: Heading & Sticky CTA */}
+          {/* Left Column: Heading & Sticky CTA (With Skiper31 3D Scroll Reveal) */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -61,12 +142,28 @@ export default function WhySection() {
             className="lg:col-span-5 flex flex-col justify-between"
           >
             <div>
-              <h2 className="font-display font-black text-4xl sm:text-5xl md:text-6xl text-[#0f0f17] tracking-tight">
-                Why <span className="gradient-text-purple">X-One Hub</span>
+              <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-[#0f0f17] tracking-tight leading-[1.18]">
+                <div className="block">
+                  <ScrollParagraph3D
+                    text="Built For Founders Who"
+                    scrollYProgress={smoothProgress}
+                  />
+                </div>
+                <div className="block text-purple-600 font-extrabold mt-1 sm:mt-2">
+                  <ScrollParagraph3D
+                    text="Value Real Results."
+                    scrollYProgress={smoothProgress}
+                  />
+                </div>
               </h2>
-              <p className="mt-6 text-slate-600 text-base md:text-lg leading-relaxed font-light">
-                We combine great creative design with real commercial performance. Built for ambitious founders who want reliable growth without complications.
-              </p>
+              <div className="mt-6">
+                <ScrollParagraph3D
+                  as="p"
+                  text="We combine great creative design with real commercial performance. Built for ambitious founders who want reliable growth without complications."
+                  scrollYProgress={smoothProgress}
+                  className="text-slate-600 text-base md:text-lg leading-relaxed font-light"
+                />
+              </div>
             </div>
 
             <div className="mt-10">
@@ -79,7 +176,7 @@ export default function WhySection() {
             </div>
           </motion.div>
 
-          {/* Right Column: Statement & 4 Pillars */}
+          {/* Right Column: Statement & 4 Pillars (All with Skiper31 3D Scroll Animations) */}
           <div className="lg:col-span-7 space-y-10">
             {/* Statement Box */}
             <motion.div
@@ -92,18 +189,29 @@ export default function WhySection() {
               <div className="absolute top-0 right-0 p-8 text-8xl font-display font-black text-purple-600/5 select-none pointer-events-none">
                 X
               </div>
-              <blockquote className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-[#0f0f17] leading-tight tracking-tight">
-                <span className="block text-slate-800">What we do is simple —</span>
-                <span className="block gradient-text-purple mt-2">
-                  We build solutions that look beautiful and actually sell.
-                </span>
-                <span className="block text-slate-900 mt-2">
-                  No wasted budgets, no confusing jargon.
-                </span>
+              <blockquote className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-[#0f0f17] leading-snug tracking-tight space-y-3">
+                <div className="text-slate-800">
+                  <ScrollParagraph3D
+                    text="What we do is simple —"
+                    scrollYProgress={smoothProgress}
+                  />
+                </div>
+                <div className="text-purple-600">
+                  <ScrollParagraph3D
+                    text="We build solutions that look beautiful and actually sell."
+                    scrollYProgress={smoothProgress}
+                  />
+                </div>
+                <div className="text-slate-900 text-xl sm:text-2xl md:text-3xl font-semibold">
+                  <ScrollParagraph3D
+                    text="No wasted budgets, no confusing jargon."
+                    scrollYProgress={smoothProgress}
+                  />
+                </div>
               </blockquote>
             </motion.div>
 
-            {/* 4 Pillars Grid */}
+            {/* 4 Pillars Grid with 3D Perspective Scroll Reveal */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {pillars.map((pillar, idx) => {
                 const Icon = pillar.icon;
@@ -120,12 +228,20 @@ export default function WhySection() {
                     <div className="w-11 h-11 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-700 group-hover:scale-110 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <h3 className="mt-4 font-display font-bold text-lg text-[#0f0f17] group-hover:text-purple-700 transition-colors">
-                      {pillar.title}
-                    </h3>
-                    <p className="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
-                      {pillar.desc}
-                    </p>
+                    <div className="mt-4">
+                      <ScrollParagraph3D
+                        text={pillar.title}
+                        scrollYProgress={smoothProgress}
+                        className="font-display font-bold text-lg text-[#0f0f17] group-hover:text-purple-700 transition-colors"
+                      />
+                    </div>
+                    <div className="mt-2">
+                      <ScrollParagraph3D
+                        text={pillar.desc}
+                        scrollYProgress={smoothProgress}
+                        className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light"
+                      />
+                    </div>
                   </motion.div>
                 );
               })}

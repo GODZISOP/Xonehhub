@@ -10,12 +10,14 @@ import HeroSection from "@/components/HeroSection";
 import MarqueeSection from "@/components/MarqueeSection";
 import SolutionsSection from "@/components/SolutionsSection";
 import PortfolioStackSection from "@/components/PortfolioStackSection";
+import SvgFollowScrollSection from "@/components/SvgFollowScrollSection";
 import WhySection from "@/components/WhySection";
 import StatisticsSection from "@/components/StatisticsSection";
 import ProcessSection from "@/components/ProcessSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FaqSection from "@/components/FaqSection";
 import CtaSection from "@/components/CtaSection";
+import { Skiper44 } from "@/components/v1/skiper44";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
@@ -71,6 +73,9 @@ export default function Home() {
         {/* Sticky Stacking Cards Portfolio Section */}
         <PortfolioStackSection onOpenQuote={() => handleOpenQuote()} />
 
+        {/* Skiper UI #19: Svg Follow Scroll Animation Section */}
+        <SvgFollowScrollSection />
+
         {/* Studio Manifesto / Why X-One Hub */}
         <WhySection />
 
@@ -88,6 +93,9 @@ export default function Home() {
 
         {/* Full Contact Form & Methods */}
         <CtaSection onOpenQuote={() => handleOpenQuote()} />
+
+        {/* Skiper UI #44: Vercel Scroll With Blur Animation (Right before Footer) */}
+        <Skiper44 onOpenQuote={() => handleOpenQuote()} />
       </main>
 
       {/* Comprehensive Footer */}
