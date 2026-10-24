@@ -10,16 +10,18 @@ import {
 } from "framer-motion";
 
 export const WHEEL_ITEMS = [
-  "the brand identity",
-  "high-converting Shopify stores",
   "8-figure Amazon storefronts",
-  "category-defining aesthetics",
-  "custom web applications",
-  "3D packaging & motion assets",
-  "viral performance ad creative",
-  "frictionless checkout funnels",
-  "verified digital storefronts",
-  "sustainable commercial scale",
+  "verified Seller Central accounts",
+  "high-converting A+ Content & EBC",
+  "algorithmic Amazon PPC campaigns",
+  "profitable Wholesale FBA pipelines",
+  "compliant US LLC company formations",
+  "US business bank accounts (Chase & BoA)",
+  "brand ungating & LOA authorizations",
+  "trademark & Amazon Brand Registry",
+  "global financial rails (Stripe & Wise)",
+  "hands-free FBA store automation",
+  "sustainable Amazon revenue scale",
 ];
 
 interface WheelRowProps {
@@ -158,12 +160,12 @@ export const Skiper44: React.FC<Skiper44Props> = ({ className = "" }) => {
         <div className="absolute w-[650px] h-[650px] rounded-full bg-purple-700/20 blur-[150px] pointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
         <div className="absolute inset-0 bg-[radial-gradient(#272733_1px,transparent_1px)] [background-size:28px_28px] opacity-20 pointer-events-none" />
 
-        {/* ── Main Stage: "We Design" + Rolling Wheel ── */}
+        {/* ── Main Stage: "We Scale" + Rolling Wheel ── */}
         <div className="relative z-20 max-w-7xl w-full mx-auto px-6 sm:px-10 md:px-12 flex flex-col md:flex-row items-center justify-center gap-3 sm:gap-5 md:gap-7">
-          {/* Left: Fixed "We Design" */}
+          {/* Left: Fixed "We Scale" */}
           <div className="shrink-0 flex items-center">
             <h2 className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-white whitespace-nowrap leading-none select-none">
-              We Design
+              We Scale
             </h2>
           </div>
 

@@ -46,15 +46,10 @@ export default function TestimonialsSection() {
           </div>
         </motion.div>
 
-        {/*}/}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.15 }}
-          transition={{ duration: 0.75, ease: "easeOut" }}
-        >
+        {/* Skiper UI #35: Hover Expand Showcase Gallery */}
+        <div className="w-full">
           <Skiper35 items={DEFAULT_TESTIMONIALS} />
-        </motion.div>
+        </div>
 
         {/* Bottom Social Proof Trust Stats */}
         <motion.div
