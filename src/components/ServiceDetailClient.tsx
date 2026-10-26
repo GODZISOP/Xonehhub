@@ -914,7 +914,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
 
             {/* Subheading */}
             <p className="text-slate-600 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto mb-8">
-              The most popular choice for international founders. Low fees, strong privacy, zero state income tax, and the fastest formation timeline. Full Package: $500
+              The most popular choice for international founders. Low fees, strong privacy, zero state income tax, and the fastest formation timeline.
             </p>
 
             {/* Action Buttons */}
@@ -977,7 +977,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               {[
                 {
                   title: "Lowest Ongoing Fees",
-                  desc: "$100 state filing fee. Annual report fee is just $60. No franchise tax. No minimum capital requirements.",
+                  desc: "Low state filing fee and minimal annual report requirements. No franchise tax. No minimum capital requirements.",
                 },
                 {
                   title: "Strong Privacy",
@@ -1033,13 +1033,13 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                 <tbody className="divide-y divide-slate-100">
                   <tr>
                     <td className="p-4 font-semibold text-slate-800">State Filing Fee</td>
-                    <td className="p-4 text-purple-900 bg-purple-50/30 font-medium">$100 (Included in package)</td>
-                    <td className="p-4 text-slate-600">$110 + Franchise fee</td>
+                    <td className="p-4 text-purple-900 bg-purple-50/30 font-medium">Included in package</td>
+                    <td className="p-4 text-slate-600">State fee + Franchise fee</td>
                   </tr>
                   <tr>
                     <td className="p-4 font-semibold text-slate-800">Annual Report Fee</td>
-                    <td className="p-4 text-purple-900 bg-purple-50/30 font-medium">$60 flat (Lowest in US)</td>
-                    <td className="p-4 text-slate-600">$300+ annual franchise tax</td>
+                    <td className="p-4 text-purple-900 bg-purple-50/30 font-medium">Lowest in US</td>
+                    <td className="p-4 text-slate-600">Annual franchise tax applies</td>
                   </tr>
                   <tr>
                     <td className="p-4 font-semibold text-slate-800">State Income Tax</td>
@@ -1058,8 +1058,8 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                   </tr>
                   <tr>
                     <td className="p-4 font-semibold text-slate-800">Full All-Inclusive Package</td>
-                    <td className="p-4 text-purple-900 bg-purple-50/30 font-bold">$500 Complete</td>
-                    <td className="p-4 text-slate-600">$750+</td>
+                    <td className="p-4 text-purple-900 bg-purple-50/30 font-bold">Turnkey Setup</td>
+                    <td className="p-4 text-slate-600">Standard Filing Only</td>
                   </tr>
                 </tbody>
               </table>
@@ -1067,12 +1067,12 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
           </div>
         </section>
 
-        {/* Package Box: What's Included in Your $500 Wyoming Formation */}
+        {/* Package Box: What's Included in Your Wyoming Formation */}
         <section className="py-20 bg-white border-b border-slate-200">
           <div className="max-w-3xl mx-auto px-6">
             <div className="text-center mb-10">
               <h2 className="font-display font-black text-2xl sm:text-4xl text-[#0f0f17] mb-2">
-                What&apos;s Included in Your $500 Wyoming Formation
+                What&apos;s Included in Your Wyoming Formation
               </h2>
               <p className="text-slate-600 text-sm font-light">
                 Zero hidden charges. Everything required to sell on Amazon US and open US bank accounts.
@@ -1087,8 +1087,8 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                 Turnkey Wyoming Formation
               </h3>
               <span className="text-xs font-mono text-purple-300 block mb-3">100% Non-Resident Ready</span>
-              <div className="text-3xl sm:text-4xl font-display font-black text-white mb-4">
-                $500 <span className="text-xs font-normal text-purple-200">/ one-time</span>
+              <div className="text-2xl sm:text-3xl font-display font-black text-white mb-4">
+                Turnkey Package <span className="text-xs font-normal text-purple-200">/ all-inclusive</span>
               </div>
               <p className="text-purple-100 text-xs sm:text-sm max-w-md mx-auto mb-8 font-light">
                 We handle state filings, official agent appointments, federal tax IDs, and bank onboarding so you don&apos;t face any rejections.
@@ -1096,7 +1096,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
 
               <div className="space-y-2.5 max-w-lg mx-auto mb-8 text-left text-xs sm:text-sm text-purple-100">
                 {[
-                  "Wyoming Secretary of State Filing Fee ($100 included)",
+                  "Wyoming Secretary of State Filing Fee (Included)",
                   "Registered Agent Service (1 Full Year Included)",
                   "Official US Commercial Business Address (1 Year)",
                   "IRS Federal EIN (Tax ID) for Non-Residents without SSN",
@@ -1114,12 +1114,12 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               </div>
 
               <a
-                href="https://wa.me/923322568950?text=Hi%20Xonehub%2C%20I%20want%20to%20Pay%20Now%20for%20the%20Wyoming%20LLC%20package%20(%24500)."
+                href="https://wa.me/923322568950?text=Hi%20Xonehub%2C%20I%20want%20to%20start%20my%20Wyoming%20LLC%20formation."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-9 py-4 rounded-xl bg-purple-500 hover:bg-purple-400 text-white font-display font-bold text-base transition-all shadow-[0_0_30px_rgba(124,58,237,0.4)] hover:scale-105"
               >
-                <span>Pay Now ($500)</span>
+                <span>Start Wyoming LLC Formation</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>
@@ -1203,18 +1203,18 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
 
             {/* Subheading */}
             <p className="text-slate-600 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto mb-8">
-              Launch your commercial presence in the nation’s top trade state for just $500 all-inclusive. Zero personal state income tax, direct Sunbiz electronic processing, and unmatched logistics access.
+              Launch your commercial presence in the nation’s top trade state with turnkey support. Zero personal state income tax, direct Sunbiz electronic processing, and unmatched logistics access.
             </p>
 
             {/* Action Button */}
             <div className="flex items-center justify-center mb-10">
               <a
-                href="https://wa.me/923322568950?text=Hi%20Xonehub%2C%20I%20want%20to%20start%20my%20Florida%20LLC%20(%24500)."
+                href="https://wa.me/923322568950?text=Hi%20Xonehub%2C%20I%20want%20to%20start%20my%20Florida%20LLC."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-9 py-4 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-display font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all shadow-[0_8px_25px_rgba(124,58,237,0.35)] hover:scale-105"
               >
-                <span>Start Florida LLC ($500)</span>
+                <span>Start Florida LLC Formation</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>
@@ -1223,7 +1223,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 max-w-4xl mx-auto text-left mb-6">
               <div className="bg-[#faf8ff] border border-purple-100 p-3.5 rounded-xl">
                 <span className="text-[10px] font-mono text-purple-600 uppercase block font-bold">State Fee</span>
-                <span className="text-xs font-bold text-[#0f0f17]">Includes $125 Fee</span>
+                <span className="text-xs font-bold text-[#0f0f17]">State Fee Included</span>
               </div>
               <div className="bg-[#faf8ff] border border-purple-100 p-3.5 rounded-xl">
                 <span className="text-[10px] font-mono text-purple-600 uppercase block font-bold">Sunbiz Filing</span>
@@ -1243,7 +1243,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               </div>
               <div className="bg-[#faf8ff] border border-purple-100 p-3.5 rounded-xl">
                 <span className="text-[10px] font-mono text-purple-600 uppercase block font-bold">Turnkey Price</span>
-                <span className="text-xs font-bold text-purple-700">$500 Flat</span>
+                <span className="text-xs font-bold text-purple-700">All-Inclusive</span>
               </div>
             </div>
 
