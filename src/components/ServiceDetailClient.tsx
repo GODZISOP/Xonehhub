@@ -1329,9 +1329,9 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               <div className="inline-block px-3.5 py-1 rounded-full bg-purple-500 text-white text-xs font-mono font-bold uppercase tracking-wider mb-3">
                 Full Florida LLC Package
               </div>
-              <span className="text-xs font-mono text-purple-200 block mb-2">Includes $125 State Fee</span>
-              <div className="text-3xl sm:text-5xl font-display font-black text-white mb-4">
-                $500 <span className="text-xs font-normal text-purple-200">/ all-inclusive</span>
+              <span className="text-xs font-mono text-purple-200 block mb-2">State Filing Fee Included</span>
+              <div className="text-2xl sm:text-4xl font-display font-black text-white mb-4">
+                Turnkey Package <span className="text-xs font-normal text-purple-200">/ all-inclusive</span>
               </div>
               <p className="text-purple-100 text-xs sm:text-sm max-w-md mx-auto mb-8 font-light">
                 Complete setup with Florida Department of State, IRS tax ID, physical address, and dedicated non-resident bank onboarding.
@@ -1339,7 +1339,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
 
               <div className="space-y-2.5 max-w-lg mx-auto mb-8 text-left text-xs sm:text-sm text-purple-100">
                 {[
-                  "Florida Division of Corporations Filing Fee ($125 Included)",
+                  "Florida Division of Corporations Filing Fee (Included)",
                   "Florida Registered Agent Service (1 Full Year)",
                   "Commercial Street Address in Florida with Mail Forwarding",
                   "Federal EIN (Tax ID) from IRS for Non-Residents",
@@ -1358,12 +1358,12 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               </div>
 
               <a
-                href="https://wa.me/923322568950?text=Hi%20Xonehub%2C%20I%20want%20to%20Pay%20Now%20for%20the%20Florida%20LLC%20package%20(%24500)."
+                href="https://wa.me/923322568950?text=Hi%20Xonehub%2C%20I%20want%20to%20start%20my%20Florida%20LLC%20package."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-9 py-4 rounded-xl bg-purple-500 hover:bg-purple-400 text-white font-display font-bold text-base transition-all shadow-[0_0_30px_rgba(124,58,237,0.4)] hover:scale-105"
               >
-                <span>Pay Now ($500)</span>
+                <span>Start Florida LLC Formation</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>
