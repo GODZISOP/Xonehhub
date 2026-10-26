@@ -586,9 +586,9 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                 Choose Your Package
               </h2>
               <p className="text-slate-600 text-sm font-light">
-                Pick the profit margin percentage you want for your approved brands.
               </p>
-            </div>
+            </div>                Pick the profit margin percentage you want for your approved brands.
+
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {/* Package 1 */}
