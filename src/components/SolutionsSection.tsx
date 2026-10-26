@@ -126,7 +126,7 @@ const services: ServiceItem[] = [
       "Everything you need as an international founder: Articles of Organization, 1-year Registered Agent, EIN tax ID, Operating Agreement, and US bank account guidance.",
     image: "/images/wyoming-llc.jpg",
     icon: Building2,
-    highlight: "$350 All-Inclusive",
+    highlight: "Turnkey Setup",
     tags: ["0% State Income Tax", "EIN Tax ID", "Registered Agent", "US Bank Guidance"],
     capabilities: [
       "Official Articles of Organization filing with Secretary of State",

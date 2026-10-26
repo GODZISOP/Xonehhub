@@ -127,7 +127,7 @@ const portfolioProjects: ProjectData[] = [
     results: [
       { label: "State Income Tax", value: "0%" },
       { label: "Formation Speed", value: "2-4 Days" },
-      { label: "Package Price", value: "$500 Flat" },
+      { label: "Filing Status", value: "Turnkey Complete" },
     ],
     image: "/images/wyoming-llc.jpg",
     caseDetails: {
@@ -158,8 +158,8 @@ const portfolioProjects: ProjectData[] = [
       "Daily BuyBox Repricing & Inventory Restock",
     ],
     results: [
-      { label: "Months 1 & 2 Fee", value: "$300 / mo" },
-      { label: "Month 3 Onwards", value: "Profit %" },
+      { label: "Dedicated Onboarding", value: "Full Setup" },
+      { label: "Ongoing Growth", value: "Profit Share" },
       { label: "Account Health", value: "100% Green" },
     ],
     image: "/images/amazon-wholesale-fba.jpg",
@@ -169,7 +169,7 @@ const portfolioProjects: ProjectData[] = [
       solution:
         "We take care of the heavy lifting from buying products with real commercial invoices to prep labels, inventory tracking, and daily repricing.",
       outcome:
-        "Zero monthly retainer from Month 3 onwards! Once your sales are running, we only earn based on a percentage of net profit.",
+        "Complete hands-free wholesale operations! Once your sales are running, our incentives are aligned on net profit growth.",
     },
   },
 ];

@@ -50,9 +50,9 @@ const SERVICES_DROPDOWN = [
     color: "text-blue-600",
     dot: "bg-blue-500",
     items: [
-      { label: "Wyoming LLC — $500", href: "/services/wyoming-llc", icon: Building2 },
-      { label: "Florida LLC — $500", href: "/services/florida-llc", icon: Building2 },
-      { label: "Texas LLC — $550", href: "/services/texas-llc", icon: Building2 },
+      { label: "Wyoming LLC", href: "/services/wyoming-llc", icon: Building2 },
+      { label: "Florida LLC", href: "/services/florida-llc", icon: Building2 },
+      { label: "Texas LLC", href: "/services/texas-llc", icon: Building2 },
     ],
   },
   {
@@ -60,12 +60,12 @@ const SERVICES_DROPDOWN = [
     color: "text-emerald-600",
     dot: "bg-emerald-500",
     items: [
-      { label: "Stripe Account — $100", href: "/services/stripe-account-setup", icon: CreditCard },
-      { label: "Wise Account — $100", href: "/services/wise-account-setup", icon: CreditCard },
-      { label: "Payoneer Account — $100", href: "/services/payoneer-account-setup", icon: CreditCard },
-      { label: "Airwallex Account — $100", href: "/services/airwallex-account-setup", icon: CreditCard },
-      { label: "Chase Bank Setup — $1,500", href: "/services/chase-bank-setup", icon: Landmark },
-      { label: "Bank of America — $1,500", href: "/services/bank-of-america-setup", icon: Landmark },
+      { label: "Stripe Account", href: "/services/stripe-account-setup", icon: CreditCard },
+      { label: "Wise Account", href: "/services/wise-account-setup", icon: CreditCard },
+      { label: "Payoneer Account", href: "/services/payoneer-account-setup", icon: CreditCard },
+      { label: "Airwallex Account", href: "/services/airwallex-account-setup", icon: CreditCard },
+      { label: "Chase Bank Setup", href: "/services/chase-bank-setup", icon: Landmark },
+      { label: "Bank of America", href: "/services/bank-of-america-setup", icon: Landmark },
     ],
   },
 ];

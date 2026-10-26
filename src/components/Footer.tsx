@@ -123,7 +123,7 @@ export default function Footer({ onOpenQuote }: FooterProps) {
               </li>
               <li>
                 <a href="/services/wyoming-llc" className="text-zinc-400 hover:text-white transition-colors">
-                  Wyoming LLC — $500
+                  Wyoming LLC
                 </a>
               </li>
               <li>
@@ -133,12 +133,12 @@ export default function Footer({ onOpenQuote }: FooterProps) {
               </li>
               <li>
                 <a href="/services/airwallex-account-setup" className="text-zinc-400 hover:text-white transition-colors">
-                  Airwallex Account — $100
+                  Airwallex Account
                 </a>
               </li>
               <li>
                 <a href="/services/stripe-account-setup" className="text-zinc-400 hover:text-white transition-colors">
-                  Stripe Account — $100
+                  Stripe Account
                 </a>
               </li>
             </ul>
