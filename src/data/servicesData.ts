@@ -1172,7 +1172,7 @@ export const servicesData: ServiceDetail[] = [
       "Get your Stripe Account set up correctly and securely to streamline your global payments — all in one platform. Everything you need. Nothing you don't.",
     heroImage: "/images/stripe-account-setup.jpg",
     badge: "Bank Account Creation",
-    priceBadge: "$100 One-Time",
+    priceBadge: "Professional Setup",
     heroCtaText: "Talk to an Expert",
     heroWhatsappText: "Hi Xonehub, I need help with Stripe Setup",
     highlights: [
@@ -1220,7 +1220,7 @@ export const servicesData: ServiceDetail[] = [
       "E-commerce store owners (Shopify, WooCommerce, Custom)",
       "Non-resident founders needing global credit card processing",
     ],
-    pricingNote: "Professional Setup: $100 / one-time flat fee.",
+    pricingNote: "Professional turnkey account setup and documentation verification.",
     faqs: [
       {
         question: "Can I receive Amazon Seller Central payouts into Stripe?",
@@ -1234,8 +1234,8 @@ export const servicesData: ServiceDetail[] = [
     packages: [
       {
         name: "Professional Setup",
-        price: "$100",
-        margin: "One-Time",
+        price: "Turnkey",
+        margin: "Verified",
         description: "Perfect for sellers that need speed, structure, and a premium setup for success.",
         included: [
           "Accept Global Payments",
@@ -1245,7 +1245,7 @@ export const servicesData: ServiceDetail[] = [
           "Comprehensive Financial Reporting",
           "100% Verified Setup",
         ],
-        whatsappText: "Hi Xonehub, I want to Pay Now for Professional Stripe Account Opening ($100).",
+        whatsappText: "Hi Xonehub, I want to get started with Professional Stripe Account Opening.",
       },
     ],
   },
@@ -1261,7 +1261,7 @@ export const servicesData: ServiceDetail[] = [
       "Get your Wise Account set up correctly and securely to streamline your global payments — all in one platform. Real mid-market exchange rates without standard bank markups.",
     heroImage: "/images/wise-account-setup.jpg",
     badge: "Bank Account Creation",
-    priceBadge: "$100 One-Time",
+    priceBadge: "Professional Setup",
     heroCtaText: "Talk to an Expert",
     heroWhatsappText: "Hi Xonehub, I need help with Wise Setup",
     highlights: [
@@ -1309,7 +1309,7 @@ export const servicesData: ServiceDetail[] = [
       "Founders paying overseas manufacturers and freight forwarders",
       "Non-resident sellers wanting mid-market foreign exchange rates",
     ],
-    pricingNote: "Professional Setup: $100 / one-time flat fee.",
+    pricingNote: "Professional turnkey account setup and documentation verification.",
     faqs: [
       {
         question: "Can I connect Wise directly to Amazon Seller Central?",
@@ -1323,8 +1323,8 @@ export const servicesData: ServiceDetail[] = [
     packages: [
       {
         name: "Professional Setup",
-        price: "$100",
-        margin: "One-Time",
+        price: "Turnkey",
+        margin: "Verified",
         description: "Perfect for sellers that need speed, structure, and a premium setup for success.",
         included: [
           "Real Mid-Market Exchange Rate",
@@ -1334,7 +1334,7 @@ export const servicesData: ServiceDetail[] = [
           "Business Expense Cards",
           "100% Verified Setup",
         ],
-        whatsappText: "Hi Xonehub, I want to Pay Now for Professional Wise Account Opening ($100).",
+        whatsappText: "Hi Xonehub, I want to get started with Professional Wise Account Opening.",
       },
     ],
   },
@@ -1350,7 +1350,7 @@ export const servicesData: ServiceDetail[] = [
       "Get your Payoneer Account set up correctly and securely to streamline your global payments — all in one platform. Direct receiving accounts in USD, EUR, GBP, CAD, JPY, and AUD.",
     heroImage: "/images/payoneer-account-setup.jpg",
     badge: "Bank Account Creation",
-    priceBadge: "$100 One-Time",
+    priceBadge: "Professional Setup",
     heroCtaText: "Talk to an Expert",
     heroWhatsappText: "Hi Xonehub, I need help with Payoneer Setup",
     highlights: [
@@ -1398,7 +1398,7 @@ export const servicesData: ServiceDetail[] = [
       "Founders needing hassle-free withdrawals to their local bank accounts",
       "Sellers requiring global multi-currency deposit accounts",
     ],
-    pricingNote: "Professional Setup: $100 / one-time flat fee.",
+    pricingNote: "Professional turnkey account setup and documentation verification.",
     faqs: [
       {
         question: "Can I withdraw money to my local bank?",
@@ -1412,8 +1412,8 @@ export const servicesData: ServiceDetail[] = [
     packages: [
       {
         name: "Professional Setup",
-        price: "$100",
-        margin: "One-Time",
+        price: "Turnkey",
+        margin: "Verified",
         description: "Perfect for sellers that need speed, structure, and a premium setup for success.",
         included: [
           "Local Receiving Accounts in 6+ Currencies",
@@ -1422,7 +1422,7 @@ export const servicesData: ServiceDetail[] = [
           "Prepaid Mastercard Debit Card Support",
           "100% Verified Approval Support",
         ],
-        whatsappText: "Hi Xonehub, I want to Pay Now for Professional Payoneer Account Opening ($100).",
+        whatsappText: "Hi Xonehub, I want to get started with Professional Payoneer Account Opening.",
       },
     ],
   },
@@ -1438,9 +1438,9 @@ export const servicesData: ServiceDetail[] = [
       "Open local accounts in 11+ currencies instantly. Receive Amazon payouts without forced conversions and pay suppliers in their native currency.",
     heroImage: "/images/airwallex-account-setup.jpg",
     badge: "Bank Account Creation",
-    priceBadge: "$100 One-Time",
+    priceBadge: "Professional Setup",
     heroCtaText: "START YOUR SETUP",
-    heroWhatsappText: "Hi Xonehub, I want to set up my Professional Airwallex Account ($100).",
+    heroWhatsappText: "Hi Xonehub, I want to set up my Professional Airwallex Account.",
     highlights: [
       "Global accounts in 11+ currencies",
       "Market-leading interbank FX rates",
@@ -1486,22 +1486,22 @@ export const servicesData: ServiceDetail[] = [
       "Founders needing virtual cards for PPC ad spend & supplier payments",
       "Non-US resident business owners needing swift global banking",
     ],
-    pricingNote: "Professional Setup: $100 / one-time flat fee.",
+    pricingNote: "Professional turnkey account setup and documentation verification.",
     faqs: [
       {
         question: "Can I receive Amazon Seller Central payouts directly into Airwallex?",
         answer: "Yes! Airwallex provides local USD, GBP, EUR, and 8+ other currency bank accounts that integrate seamlessly into Amazon Seller Central.",
       },
       {
-        question: "What is the fee for Airwallex setup?",
-        answer: "Our professional setup fee is a flat $100 one-time.",
+        question: "What is included in the Airwallex setup?",
+        answer: "Our professional setup covers end-to-end documentation audit, corporate alignment, and application onboarding.",
       },
     ],
     packages: [
       {
         name: "Professional Setup",
-        price: "$100",
-        margin: "One-Time",
+        price: "Turnkey",
+        margin: "Verified",
         description: "Perfect for sellers that need speed, structure, and a premium setup for success.",
         included: [
           "Global Accounts in 11+ Currencies",
@@ -1511,7 +1511,7 @@ export const servicesData: ServiceDetail[] = [
           "Optimized for E-commerce Sellers",
           "100% Verified Guarantee",
         ],
-        whatsappText: "Hi Xonehub, I want to Pay Now for Professional Airwallex Account Setup ($100).",
+        whatsappText: "Hi Xonehub, I want to get started with Professional Airwallex Account Setup.",
       },
     ],
   },
@@ -1527,9 +1527,9 @@ export const servicesData: ServiceDetail[] = [
       "Our tier-1 physical banking solution offers a seamless and highly secure platform for making vendor payments, managing Amazon payouts, and monitoring all business transactions.",
     heroImage: "/images/chase-bank-setup.jpg",
     badge: "Bank Account Creation",
-    priceBadge: "$1,500 One-Time",
+    priceBadge: "Physical US Banking",
     heroCtaText: "Start Setup",
-    heroWhatsappText: "Hi Xonehub, I want to set up my physical US Chase Bank Business Account ($1,500).",
+    heroWhatsappText: "Hi Xonehub, I want to set up my physical US Chase Bank Business Account.",
     highlights: [
       "Tier-1 physical US banking entity",
       "High-limit Chase Ink Business credit cards",
@@ -1540,7 +1540,7 @@ export const servicesData: ServiceDetail[] = [
       { value: "5.0 ★", label: "Verified Service" },
       { value: "100+", label: "Active Sellers" },
       { value: "100%", label: "Compliance Guarantee" },
-      { value: "$0", label: "Holding Reserves" },
+      { value: "Zero", label: "Holding Reserves" },
     ],
     whatWeDoTitle: "One account. Total control.",
     whatWeDo:
@@ -1575,7 +1575,7 @@ export const servicesData: ServiceDetail[] = [
       "Founders who want to avoid fintech wallet freezes and rolling reserves",
       "Businesses needing high-limit US business credit cards",
     ],
-    pricingNote: "Premium Elite Package: $1,500 / one-time flat fee.",
+    pricingNote: "Premium physical banking setup with complete corporate structuring and direct banker onboarding.",
     faqs: [
       {
         question: "Do I need to visit the USA to open a Chase account?",
@@ -1583,14 +1583,14 @@ export const servicesData: ServiceDetail[] = [
       },
       {
         question: "Is the LLC structuring included?",
-        answer: "Yes, full US corporate structuring to support your physical banking is included in the $1,500 price.",
+        answer: "Yes, full US corporate structuring to support your physical banking is included in the package.",
       },
     ],
     packages: [
       {
         name: "Premium Elite Package",
-        price: "$1,500",
-        margin: "One-Time",
+        price: "Elite",
+        margin: "Turnkey",
         description: "The ultimate banking solution for high-tier Amazon sellers and global dropshippers.",
         included: [
           "Premium US Banking Entity",
@@ -1600,7 +1600,7 @@ export const servicesData: ServiceDetail[] = [
           "LLC Corporate Structuring Included",
           "100% Remote Verification",
         ],
-        whatsappText: "Hi Xonehub, I want to Pay Now for Chase Bank Physical Banking Package ($1,500).",
+        whatsappText: "Hi Xonehub, I want to get started with Chase Bank Physical Banking Package.",
       },
     ],
   },
@@ -1616,9 +1616,9 @@ export const servicesData: ServiceDetail[] = [
       "Our tier-1 physical banking solution offers a seamless and highly secure platform for making vendor payments, managing Amazon payouts, and monitoring all business transactions.",
     heroImage: "/images/bank-of-america-setup.jpg",
     badge: "Bank Account Creation",
-    priceBadge: "$1,500 One-Time",
+    priceBadge: "Physical US Banking",
     heroCtaText: "Start Setup",
-    heroWhatsappText: "Hi Xonehub, I want to set up my physical US Bank of America Business Account ($1,500).",
+    heroWhatsappText: "Hi Xonehub, I want to set up my physical US Bank of America Business Account.",
     highlights: [
       "Top-tier US physical bank advantage",
       "Instant ACH & global wire transfers",
@@ -1629,7 +1629,7 @@ export const servicesData: ServiceDetail[] = [
       { value: "5.0 ★", label: "Verified Service" },
       { value: "100+", label: "Active Sellers" },
       { value: "100%", label: "Compliance Guarantee" },
-      { value: "$0", label: "Rolling Reserves" },
+      { value: "Zero", label: "Rolling Reserves" },
     ],
     whatWeDoTitle: "Instantly receive & manage payouts.",
     whatWeDo:
@@ -1665,22 +1665,22 @@ export const servicesData: ServiceDetail[] = [
       "Businesses requiring fast international supplier wire transfers",
       "Founders seeking maximum banking stability and corporate prestige",
     ],
-    pricingNote: "Premium Elite Package: $1,500 / one-time flat fee.",
+    pricingNote: "Premium physical banking setup with complete corporate structuring and direct banker onboarding.",
     faqs: [
       {
         question: "Do I need a US visa or social security number?",
         answer: "No. We open your physical US Bank of America business account remotely without a US SSN or personal visit.",
       },
       {
-        question: "What is included in the $1,500 price?",
+        question: "What is included in the physical banking setup?",
         answer: "Full physical account opening, US corporate structuring, remote verification, and official online banking credentials.",
       },
     ],
     packages: [
       {
         name: "Premium Elite Package",
-        price: "$1,500",
-        margin: "One-Time",
+        price: "Elite",
+        margin: "Turnkey",
         description: "The ultimate banking solution for high-tier Amazon sellers and global dropshippers.",
         included: [
           "Top-Tier US Physical Bank",
@@ -1690,7 +1690,7 @@ export const servicesData: ServiceDetail[] = [
           "Highly Trusted by Amazon",
           "100% Remote Setup",
         ],
-        whatsappText: "Hi Xonehub, I want to Pay Now for Bank of America Physical Banking Package ($1,500).",
+        whatsappText: "Hi Xonehub, I want to get started with Bank of America Physical Banking Package.",
       },
     ],
   },
