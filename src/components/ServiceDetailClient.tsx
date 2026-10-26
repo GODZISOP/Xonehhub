@@ -398,12 +398,12 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               </div>
 
               <a
-                href="https://wa.me/923322568950?text=Hi%20Xonehub%2C%20I%20want%20to%20Pay%20Now%20and%20verify%20my%20Amazon%20Seller%20Central%20account."
+                href="https://wa.me/923322568950?text=Hi%20Xonehub%2C%20I%20want%20to%20get%20started%20and%20verify%20my%20Amazon%20Seller%20Central%20account."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-9 py-4 rounded-xl bg-purple-500 hover:bg-purple-400 text-white font-display font-bold text-base transition-all shadow-[0_0_30px_rgba(124,58,237,0.4)] hover:scale-105"
               >
-                <span>Pay Now &amp; Start Setup</span>
+                <span>Get Started on WhatsApp</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>
@@ -499,7 +499,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                 rel="noopener noreferrer"
                 className="px-9 py-4 rounded-full bg-purple-600 hover:bg-purple-700 text-white font-display font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all shadow-[0_8px_25px_rgba(124,58,237,0.35)] hover:scale-105"
               >
-                <span>Pay Now</span>
+                <span>Contact on WhatsApp</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>
