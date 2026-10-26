@@ -1497,18 +1497,18 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
 
             {/* Subheading */}
             <p className="text-slate-600 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto mb-8">
-              Establish your business in the industrial and e-commerce capital of the southern US for $550 all-inclusive. Zero personal state tax, top-tier corporate prestige, and premier commercial banking status.
+              Establish your business in the industrial and e-commerce capital of the southern US with complete turnkey service. Zero personal state tax, top-tier corporate prestige, and premier commercial banking status.
             </p>
 
             {/* Action Button */}
             <div className="flex items-center justify-center">
               <a
-                href="https://wa.me/923322568950?text=Hi%20Xonehub%2C%20I%20want%20to%20start%20my%20Texas%20LLC%20(%24550)."
+                href="https://wa.me/923322568950?text=Hi%20Xonehub%2C%20I%20want%20to%20start%20my%20Texas%20LLC."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-9 py-4 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-display font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all shadow-[0_8px_25px_rgba(124,58,237,0.35)] hover:scale-105"
               >
-                <span>Start Texas LLC ($550)</span>
+                <span>Start Texas LLC Formation</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>
@@ -1588,21 +1588,21 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
         <section className="py-20 bg-white border-b border-slate-200">
           <div className="max-w-3xl mx-auto px-6">
             <div className="bg-gradient-to-br from-purple-900 via-indigo-950 to-slate-900 border border-purple-300/30 rounded-3xl p-8 sm:p-12 text-center text-white shadow-2xl relative overflow-hidden">
-              <span className="text-xs font-mono text-purple-200 block mb-2">Includes $300 SOS State Fee</span>
+              <span className="text-xs font-mono text-purple-200 block mb-2">Texas SOS State Fee Included</span>
               <h3 className="text-2xl sm:text-3xl font-display font-black text-white mb-1">
                 Texas Turnkey Package
               </h3>
               <span className="text-xs font-mono text-purple-300 block mb-3">100% Non-Resident Remote Setup</span>
-              <div className="text-3xl sm:text-5xl font-display font-black text-white mb-4">
-                $550 <span className="text-xs font-normal text-purple-200">/ flat fee</span>
+              <div className="text-2xl sm:text-4xl font-display font-black text-white mb-4">
+                Turnkey Package <span className="text-xs font-normal text-purple-200">/ all-inclusive</span>
               </div>
               <p className="text-purple-100 text-xs sm:text-sm max-w-md mx-auto mb-8 font-light">
-                Includes the entire $300 Texas Secretary of State statutory fee, full year of registered agent, commercial address, federal EIN, and US banking guidance.
+                Includes the Texas Secretary of State statutory fee, full year of registered agent, commercial address, federal EIN, and US banking guidance.
               </p>
 
               <div className="space-y-2.5 max-w-lg mx-auto mb-8 text-left text-xs sm:text-sm text-purple-100">
                 {[
-                  "Texas Secretary of State Filing Fee ($300 Included)",
+                  "Texas Secretary of State Filing Fee (Included)",
                   "Texas Registered Agent Service (1 Full Year)",
                   "Commercial Street Address in Texas with Mail Scanning",
                   "IRS Federal EIN (Employer Identification Number) for Non-Residents",
@@ -1620,12 +1620,12 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               </div>
 
               <a
-                href="https://wa.me/923322568950?text=Hi%20Xonehub%2C%20I%20want%20to%20Pay%20Now%20for%20the%20Texas%20LLC%20package%20(%24550)."
+                href="https://wa.me/923322568950?text=Hi%20Xonehub%2C%20I%20want%20to%20start%20my%20Texas%20LLC%20package."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-9 py-4 rounded-xl bg-purple-500 hover:bg-purple-400 text-white font-display font-bold text-base transition-all shadow-[0_0_30px_rgba(124,58,237,0.4)] hover:scale-105"
               >
-                <span>Pay Now ($550)</span>
+                <span>Start Texas LLC Formation</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>
@@ -1901,17 +1901,17 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                       <span className="text-xs font-mono font-bold uppercase tracking-wider text-purple-700 bg-purple-100 px-2.5 py-0.5 rounded-full">
                         Package 1
                       </span>
-                      <span className="text-2xl font-display font-black text-purple-700">$600</span>
+                      <span className="text-sm font-display font-black text-purple-700 bg-purple-100/60 px-3 py-1 rounded-lg">USPTO Official</span>
                     </div>
                     <h4 className="font-display font-bold text-base text-[#0f0f17] mb-1">Logo Trademark</h4>
                     <p className="text-xs text-slate-600 mb-4 font-light">Official USPTO filing fee included. Serial number in 2–3 days for Amazon Brand Registry.</p>
                     <a
-                      href="https://wa.me/923322568950?text=Hi%20Xonehub%2C%20I%20want%20to%20Pay%20Now%20for%20the%20Logo%20Trademark%20package%20(%24600)."
+                      href="https://wa.me/923322568950?text=Hi%20Xonehub%2C%20I%20want%20to%20start%20the%20Logo%20Trademark%20package."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full py-3 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-display font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all"
                     >
-                      <span>Pay Now ($600)</span>
+                      <span>Get Started on WhatsApp</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </a>
                   </div>
@@ -1921,17 +1921,17 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                       <span className="text-xs font-mono font-bold uppercase tracking-wider text-purple-700 bg-purple-100 px-2.5 py-0.5 rounded-full">
                         Package 2
                       </span>
-                      <span className="text-2xl font-display font-black text-purple-700">$700</span>
+                      <span className="text-sm font-display font-black text-purple-700 bg-purple-100/60 px-3 py-1 rounded-lg">Full Brand Protection</span>
                     </div>
                     <h4 className="font-display font-bold text-base text-[#0f0f17] mb-1">Wordmark Trademark</h4>
                     <p className="text-xs text-slate-600 mb-4 font-light">Official USPTO filing fee included. Brand name protection + instant Amazon Brand Registry access.</p>
                     <a
-                      href="https://wa.me/923322568950?text=Hi%20Xonehub%2C%20I%20want%20to%20Pay%20Now%20for%20the%20Wordmark%20Trademark%20package%20(%24700)."
+                      href="https://wa.me/923322568950?text=Hi%20Xonehub%2C%20I%20want%20to%20start%20the%20Wordmark%20Trademark%20package."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full py-3 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-display font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all"
                     >
-                      <span>Pay Now ($700)</span>
+                      <span>Get Started on WhatsApp</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </a>
                   </div>
@@ -1939,7 +1939,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               ) : (
                 <div className="mt-8 p-7 rounded-3xl bg-gradient-to-br from-purple-900 via-indigo-950 to-slate-900 border border-purple-300/30 text-white shadow-xl relative overflow-hidden">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-[11px] font-mono uppercase tracking-widest text-purple-300 font-bold">Pricing Package</span>
+                    <span className="text-[11px] font-mono uppercase tracking-widest text-purple-300 font-bold">Service Package</span>
                     <span className="text-xs font-mono bg-purple-500/80 text-white px-2.5 py-0.5 rounded-full font-bold">
                       {service.category}
                     </span>
@@ -1963,19 +1963,19 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
 
                   <div className="space-y-2.5">
                     <a
-                      href={`https://wa.me/923322568950?text=${encodeURIComponent(`Hi Xonehub, I want to Pay Now and start ${service.title} (${service.priceBadge}).`)}`}
+                      href={`https://wa.me/923322568950?text=${encodeURIComponent(`Hi Xonehub, I want to get started with ${service.title}.`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full py-3.5 rounded-xl bg-purple-500 hover:bg-purple-400 text-white font-display font-bold text-sm flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(124,58,237,0.4)] transition-all hover:scale-[1.02]"
                     >
-                      <span>Pay Now</span>
+                      <span>Get Started on WhatsApp</span>
                       <ArrowUpRight className="w-4 h-4" />
                     </a>
                     <button
                       onClick={() => setQuoteModalOpen(true)}
                       className="w-full py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-purple-200 text-xs font-medium transition-colors"
                     >
-                      Request Custom Quote
+                      Inquire Now
                     </button>
                   </div>
                 </div>
