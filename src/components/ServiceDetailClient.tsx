@@ -646,15 +646,15 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                 </a>
               </div>
 
-              {/* Package 2 */}
+              {/* Tier 2 */}
               <div className="rounded-3xl p-6 flex flex-col justify-between bg-[#faf8ff] border border-purple-100 hover:border-purple-300 hover:shadow-xl transition-all relative">
                 <div>
                   <span className="text-xs font-mono text-purple-700 bg-purple-100 px-3 py-1 rounded-full font-bold inline-block mb-3">
-                    Package 2
+                    Tier 2
                   </span>
                   <div className="mb-4 pb-4 border-b border-slate-200">
-                    <span className="font-display font-black text-3xl sm:text-4xl text-purple-700 block">$5,000</span>
-                    <span className="text-xs font-bold text-slate-800 block mt-1">20% to 45% Profit Margin</span>
+                    <span className="font-display font-black text-2xl sm:text-3xl text-purple-700 block">20% – 45%</span>
+                    <span className="text-xs font-bold text-slate-800 block mt-1">Profit Margin Range</span>
                   </div>
                   <p className="text-xs text-slate-600 mb-5 leading-relaxed font-light">
                     Get brand approvals with 20% to 45% profit margin for bigger profits and variety.
@@ -690,12 +690,12 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                   </div>
                 </div>
                 <a
-                  href="https://wa.me/923322568950?text=Hi%20Xonehub%2C%20I%20want%20the%20Package%202%20(%245%2C000%20-%2020%25%20to%2045%25%20Profit%20Margin)%20Brand%20Approval%20package."
+                  href="https://wa.me/923322568950?text=Hi%20Xonehub%2C%20I%20want%20the%20Tier%202%20(20%25%20to%2045%25%20Profit%20Margin)%20Brand%20Approval%20package."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3 rounded-full font-display font-bold text-xs flex items-center justify-center gap-1.5 bg-purple-600 hover:bg-purple-700 text-white shadow-[0_4px_15px_rgba(124,58,237,0.3)] transition-all"
                 >
-                  <span>Pay Now ($5,000)</span>
+                  <span>Inquire on WhatsApp</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
               </div>
