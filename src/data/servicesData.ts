@@ -340,25 +340,25 @@ export const servicesData: ServiceDetail[] = [
     aliases: ["fba-automation", "fba-store", "amazon-automation"],
     number: "03",
     category: "Amazon Growth",
-    categoryBadge: "$300 M1 & M2 · Profit %",
+    categoryBadge: "Complete Store Automation",
     title: "FBA Store Automation",
     tagline: "We run your Amazon FBA store for you — completely hands-free.",
     summary:
       "You invest, we do the work. We find winning products, source them from suppliers, send them to Amazon, and manage your store every single day. You just watch the profits come in.",
     heroImage: "/images/amazon-wholesale-fba.jpg",
     badge: "Amazon Growth",
-    priceBadge: "$300 M1 & M2 · Profit %",
+    priceBadge: "Store Automation",
     highlights: [
       "Full store management — you do nothing",
       "Product research, sourcing, and shipping",
       "Daily account health monitoring",
-      "$300 for first 2 months, then profit share",
+      "Dedicated launch onboarding, then profit share",
     ],
     metrics: [
       { value: "100%", label: "Hands-Free Operation" },
       { value: "Daily", label: "Store Health Checks" },
-      { value: "$300", label: "Month 1 & 2 Fee" },
-      { value: "Profit %", label: "After Month 2" },
+      { value: "Dedicated", label: "Operations Team" },
+      { value: "Profit %", label: "Performance Aligned" },
     ],
     whatWeDoTitle: "Your Amazon business, fully managed by our team.",
     whatWeDo:
@@ -384,7 +384,7 @@ export const servicesData: ServiceDetail[] = [
       "People new to Amazon who want experts to run things",
       "Those wanting a passive online business",
     ],
-    pricingNote: "$300 per month for the first 2 months. After that, we take a percentage of profits.",
+    pricingNote: "Hands-free store operations, catalog sourcing, and profit-aligned performance partnership.",
     faqs: [
       {
         question: "Do I need any Amazon knowledge?",
@@ -392,7 +392,7 @@ export const servicesData: ServiceDetail[] = [
       },
       {
         question: "How much do I need to invest?",
-        answer: "Typically $2,000–$5,000 in starting inventory, plus our $300 fee for the first 2 months. After that, we take a profit percentage.",
+        answer: "Typically $2,000–$5,000 in starting inventory capital. Our compensation aligns directly with your monthly profit percentage.",
       },
       {
         question: "When will I start making money?",
@@ -551,8 +551,8 @@ export const servicesData: ServiceDetail[] = [
       "Get official approvals to sell big brands on Amazon. We provide real Letter of Authorization (LOA), Brand Registry approval, Proforma Invoices, Paid Invoices, and complete account setup.",
     heroImage: "/images/brand-approvals.jpg",
     badge: "Amazon Growth",
-    priceBadge: "20%–70% Margin · $3,000–$10,000",
-    heroCtaText: "Pay Now",
+    priceBadge: "High Margin Brands",
+    heroCtaText: "Contact Us",
     heroWhatsappText: "Hi Xonehub, I need brand approvals and ungating for my Amazon account.",
     highlights: [
       "Official Letter of Authorization (LOA)",
@@ -585,13 +585,13 @@ export const servicesData: ServiceDetail[] = [
         desc: "We submit all documents directly inside your Amazon account until selling is fully unlocked.",
       },
     ],
-    packagesSubtitle: "Simple Pricing",
-    packagesTitle: "Choose Your Package",
+    packagesSubtitle: "Approval Tiers",
+    packagesTitle: "Choose Your Tier",
     packagesDesc: "Pick the profit margin percentage you want for your approved brands.",
     packages: [
       {
-        name: "Package 1",
-        price: "$3,000",
+        name: "Tier 1",
+        price: "Tier 1",
         margin: "20% to 30% Profit Margin",
         description: "Get brand approvals with 20% to 30% profit margin and complete documents to start selling.",
         included: [
@@ -602,11 +602,11 @@ export const servicesData: ServiceDetail[] = [
           "Full Ungating Setup in Seller Central",
           "Safe & Approved by Amazon",
         ],
-        whatsappText: "Hi Xonehub, I want the Package 1 ($3,000 - 20% to 30% Profit Margin) Brand Approval package.",
+        whatsappText: "Hi Xonehub, I want to inquire about the Tier 1 (20% to 30% Profit Margin) Brand Approval tier.",
       },
       {
-        name: "Package 2",
-        price: "$5,000",
+        name: "Tier 2",
+        price: "Tier 2",
         margin: "20% to 45% Profit Margin",
         description: "Get brand approvals with 20% to 45% profit margin for bigger profits and variety.",
         included: [
@@ -617,11 +617,11 @@ export const servicesData: ServiceDetail[] = [
           "Full Ungating Setup in Seller Central",
           "Fast 3 to 5 Days Processing",
         ],
-        whatsappText: "Hi Xonehub, I want the Package 2 ($5,000 - 20% to 45% Profit Margin) Brand Approval package.",
+        whatsappText: "Hi Xonehub, I want to inquire about the Tier 2 (20% to 45% Profit Margin) Brand Approval tier.",
       },
       {
-        name: "Package 3",
-        price: "$7,000",
+        name: "Tier 3",
+        price: "Tier 3",
         margin: "20% to 50% Profit Margin",
         description: "Get brand approvals with 20% to 50% profit margin to sell popular high-demand items.",
         included: [
@@ -632,11 +632,11 @@ export const servicesData: ServiceDetail[] = [
           "Full Ungating Setup in Seller Central",
           "High Profit Brand List",
         ],
-        whatsappText: "Hi Xonehub, I want the Package 3 ($7,000 - 20% to 50% Profit Margin) Brand Approval package.",
+        whatsappText: "Hi Xonehub, I want to inquire about the Tier 3 (20% to 50% Profit Margin) Brand Approval tier.",
       },
       {
-        name: "Package 4",
-        price: "$10,000",
+        name: "Tier 4",
+        price: "Tier 4",
         margin: "20% to 70% Profit Margin",
         description: "Get brand approvals with 20% to 70% profit margin for maximum selling profits.",
         included: [
@@ -648,13 +648,13 @@ export const servicesData: ServiceDetail[] = [
           "Top Selling Big Brands Included",
           "Priority Support",
         ],
-        whatsappText: "Hi Xonehub, I want the Package 4 ($10,000 - 20% to 70% Profit Margin) Brand Approval package.",
+        whatsappText: "Hi Xonehub, I want to inquire about the Tier 4 (20% to 70% Profit Margin) Brand Approval tier.",
       },
     ],
     bottomBanner: {
       title: "Ready to get your brand approvals?",
       desc: "Contact us on WhatsApp now. Tell us which brands you want and we will start your paperwork today.",
-      ctaText: "Pay Now",
+      ctaText: "Contact Us",
       whatsappText: "Hi Xonehub, I need brand approvals and ungating for my Amazon account.",
     },
     whatWeDoTitle: "We unlock restricted brands for you with real documentation.",
@@ -680,7 +680,7 @@ export const servicesData: ServiceDetail[] = [
       "Anyone wanting to compete in gated categories",
       "FBA sellers ready to scale with brand products",
     ],
-    pricingNote: "Package pricing from $3,000 to $10,000 based on desired profit margin (20% to 70%).",
+    pricingNote: "Curated brand approvals customized to your desired profit margin (20% to 70%).",
     faqs: [
       {
         question: "What documents are included in these packages?",
@@ -690,7 +690,7 @@ export const servicesData: ServiceDetail[] = [
       {
         question: "What profit margin percentages are included in each package?",
         answer:
-          "Our packages are tiered by profit margin: Package 1 offers 20% to 30% margin ($3,000), Package 2 offers 20% to 45% margin ($5,000), Package 3 offers 20% to 50% margin ($7,000), and Package 4 unlocks tier-one big brands with 20% to 70% profit margin ($10,000).",
+          "Our packages are tiered by profit margin: Tier 1 offers 20% to 30% margin, Tier 2 offers 20% to 45% margin, Tier 3 offers 20% to 50% margin, and Tier 4 unlocks tier-one big brands with 20% to 70% profit margin.",
       },
       {
         question: "Are these invoices real and safe for Amazon?",
@@ -716,18 +716,18 @@ export const servicesData: ServiceDetail[] = [
       "We handle everything for your Wholesale FBA business: direct brand purchasing, shipment plans with prep centers, and daily BuyBox account management.",
     heroImage: "/images/amazon-wholesale-fba.jpg",
     badge: "Amazon Growth",
-    priceBadge: "$300 M1 & M2 · Profit %",
-    heroCtaText: "Pay Now",
+    priceBadge: "Turnkey Wholesale",
+    heroCtaText: "Contact Us",
     heroWhatsappText: "Hi Xonehub, I want to start Complete Amazon Wholesale Account Management.",
     highlights: [
       "Brand Purchasing & Direct Invoices",
       "Send-to-Amazon shipment plans & prep",
       "Daily BuyBox repricing & monitoring",
-      "$300 for first 2 months, then profit share only",
+      "Dedicated onboarding phase, then profit share only",
     ],
     metrics: [
-      { value: "$300", label: "Month 1 & 2 Fee" },
-      { value: "0%", label: "Fixed Fee From Month 3" },
+      { value: "Dedicated", label: "Operations Team" },
+      { value: "Aligned", label: "Profit Share Model" },
       { value: "Daily", label: "BuyBox Repricing" },
       { value: "100%", label: "Real Brand Invoices" },
     ],
@@ -768,13 +768,13 @@ export const servicesData: ServiceDetail[] = [
       "Investors wanting a stable, predictable Amazon business",
       "Sellers who want to scale with real brand products",
       "Anyone who wants hands-free wholesale operations",
-      "Those with $2,000–$5,000+ to invest in inventory",
+      "Those with capital to invest in inventory",
     ],
-    pricingNote: "One Simple Plan: First two months are $300 each. From Month 3, we work on profit percentage only.",
+    pricingNote: "Structured onboarding followed by aligned profit percentage performance.",
     faqs: [
       {
-        question: "How does the Month 1 ($300), Month 2 ($300), and Month 3 (Profit Share %) model work?",
-        answer: "For Months 1 and 2, you pay a flat $300/month operational fee while we open wholesale accounts, vet catalogs, and get inventory into FBA. Starting Month 3, the fixed monthly retainer drops to $0 and we work strictly on profit percentage.",
+        question: "How does the wholesale onboarding and profit share model work?",
+        answer: "During the initial onboarding period, our team opens verified wholesale accounts, vets brand catalogs, and coordinates inbound FBA prep. Once steady sales are achieved, we work strictly on profit percentage.",
       },
       {
         question: "What is included in Brand Purchasing?",
@@ -802,8 +802,8 @@ export const servicesData: ServiceDetail[] = [
       "We build and manage your complete Amazon brand from scratch. Product finding, competitor research, factory sourcing, patent check, product testing, custom packaging, photography, A+ content, and PPC ads.",
     heroImage: "/images/amazon-private-label.jpg",
     badge: "Amazon Growth",
-    priceBadge: "$500 x 6 Mo · 60/40 Profit",
-    heroCtaText: "Pay Now",
+    priceBadge: "Full Brand Launch",
+    heroCtaText: "Contact Us",
     heroWhatsappText: "Hi Xonehub, I want to start Amazon Private Label Account Management.",
     highlights: [
       "9 A-to-Z Launch Tasks Completed",
@@ -813,8 +813,8 @@ export const servicesData: ServiceDetail[] = [
     ],
     metrics: [
       { value: "6 Months", label: "Initial Build Timeline" },
-      { value: "$500/mo", label: "Fee for First 6 Months" },
-      { value: "60/40", label: "Profit Share (Month 7+)" },
+      { value: "Full Turnkey", label: "Launch & Management" },
+      { value: "60/40", label: "Profit Share Partnership" },
       { value: "100%", label: "Your Brand Ownership" },
     ],
     whatWeDoTitle: "Full Service From Scratch",
@@ -846,13 +846,13 @@ export const servicesData: ServiceDetail[] = [
       "Anyone who wants to own a valuable Amazon brand",
       "Entrepreneurs wanting a hands-off private label launch",
       "Investors looking for scalable e-commerce equity",
-      "Founders ready to invest for a sustainable 60/40 profit share",
+      "Founders ready to partner on a sustainable profit share model",
     ],
-    pricingNote: "Simple 2-Step Fee Model: Pay $500 per month for the first 6 months, then we share profit 60/40.",
+    pricingNote: "Full brand development, custom manufacturer sourcing, launch marketing, and ongoing profit share.",
     faqs: [
       {
-        question: "How does the $500 for 6 months and 60/40 profit share model work?",
-        answer: "For the first 6 months, you pay $500 per month while we build and launch your entire brand from scratch. Starting Month 7, there is zero fixed monthly charge. We take 40% of net profits and you keep 60%.",
+        question: "How does the private label development and profit share partnership work?",
+        answer: "During the initial build phase, we handle the entire launch from manufacturing and packaging to listings and PPC. Once established, we align incentives through a 60/40 profit share partnership.",
       },
       {
         question: "What is included in the service?",
@@ -864,7 +864,7 @@ export const servicesData: ServiceDetail[] = [
       },
       {
         question: "How much budget is needed for stock and manufacturing?",
-        answer: "In addition to the $500/month service fee, you will need approximately $3,000 to $7,000 for your initial production batch and shipping depending on the product.",
+        answer: "You will need capital for your initial production batch and shipping depending on the product category and order quantities.",
       },
     ],
   },
@@ -873,14 +873,14 @@ export const servicesData: ServiceDetail[] = [
     aliases: ["trademark", "brand-registry"],
     number: "09",
     category: "Amazon Growth",
-    categoryBadge: "Logo $600 · Word $700",
+    categoryBadge: "USPTO Trademark & Brand Registry",
     title: "Trademark & Brand Registry",
     tagline: "Protect your brand on Amazon and unlock powerful seller tools.",
     summary:
       "A trademark protects your brand from copycats and unlocks Amazon Brand Registry — which gives you access to A+ Content, video ads, brand stores, and more. We file your USPTO trademark and get you Brand Registry access fast.",
     heroImage: "/images/trademark-brand-registry.jpg",
     badge: "Amazon Growth",
-    priceBadge: "Logo $600 · Word $700",
+    priceBadge: "Official USPTO Filing",
     highlights: [
       "Official USPTO trademark filing",
       "Serial number in 2 to 3 days",
@@ -889,9 +889,9 @@ export const servicesData: ServiceDetail[] = [
     ],
     metrics: [
       { value: "2–3 Days", label: "Serial Number Issued" },
-      { value: "$600", label: "Logo Trademark" },
-      { value: "$700", label: "Wordmark Trademark" },
-      { value: "USPTO", label: "Official US Filing" },
+      { value: "USPTO", label: "Official Logo Filing" },
+      { value: "Full IP", label: "Wordmark Protection" },
+      { value: "100%", label: "Brand Registry Eligible" },
     ],
     whatWeDoTitle: "We file your trademark and get you Amazon Brand Registry access quickly.",
     whatWeDo:
@@ -904,7 +904,7 @@ export const servicesData: ServiceDetail[] = [
     ],
     whatsIncluded: [
       "USPTO trademark application preparation",
-      "Filing for Logo ($600) or Wordmark ($700)",
+      "Official Logo or Wordmark filing",
       "Government filing fee included",
       "Serial number within 2–3 days",
       "Amazon Brand Registry enrollment",
@@ -916,7 +916,7 @@ export const servicesData: ServiceDetail[] = [
       "Anyone being copied by hijackers on their listings",
       "Brands wanting to run Sponsored Brand video ads",
     ],
-    pricingNote: "Logo Trademark: $600 total (includes filing fee). Wordmark Trademark: $700 total.",
+    pricingNote: "Complete USPTO trademark filing including legal preparation, statutory government filing fee, and serial number issuance in 2–3 days.",
     faqs: [
       {
         question: "What's the difference between a logo and wordmark trademark?",
@@ -941,12 +941,12 @@ export const servicesData: ServiceDetail[] = [
     category: "US Corporate",
     categoryBadge: "👑 #1 Recommended State for Non-Residents",
     title: "Wyoming LLC Formation",
-    tagline: "The most popular choice for international founders. Low fees, strong privacy, zero state income tax, and the fastest formation timeline. Full Package: $500",
+    tagline: "The most popular choice for international founders. Low ongoing fees, strong privacy, zero state income tax, and the fastest formation timeline.",
     summary:
-      "The most popular choice for international founders. Low fees, strong privacy, zero state income tax, and the fastest formation timeline. Full Package: $500",
+      "The most popular choice for international founders. Low ongoing fees, strong privacy, zero state income tax, and the fastest formation timeline.",
     heroImage: "/images/wyoming-llc.jpg",
     badge: "US Corporate",
-    priceBadge: "$500 Complete",
+    priceBadge: "Turnkey Package",
     heroCtaText: "Form My Wyoming LLC →",
     heroWhatsappText: "Hi Xonehub, I want to form my Wyoming LLC.",
     heroSecondaryCta: {
@@ -954,28 +954,28 @@ export const servicesData: ServiceDetail[] = [
       href: "https://wa.me/923322568950?text=Hi%20Xonehub%2C%20I%20have%20questions%20about%20Wyoming%20LLC%20formation.",
     },
     highlights: [
-      "Lowest ongoing fees ($60 annual report)",
+      "Lowest ongoing state fees in the US",
       "Strong anonymous ownership privacy",
       "0% state income tax & zero franchise tax",
       "Fast 2–4 day state approval & IRS EIN",
     ],
     metrics: [
-      { value: "$500", label: "Full Turnkey Price" },
-      { value: "$100", label: "State Fee Included" },
-      { value: "$60", label: "Annual Report Fee" },
+      { value: "Turnkey", label: "Full Formation Package" },
+      { value: "Included", label: "State Fee Covered" },
+      { value: "Lowest", label: "Annual Report Fee" },
       { value: "0%", label: "State Income Tax" },
     ],
     whatWeDoTitle: "Why Wyoming is the #1 Choice for Non-Residents",
     whatWeDo:
       "Over 70% of our international e-commerce clients choose Wyoming. Here's why.",
     howItWorks: [
-      { step: "01", title: "Lowest Ongoing Fees", desc: "$100 state filing fee. Annual report fee is just $60. No franchise tax. No minimum capital requirements." },
+      { step: "01", title: "Lowest Ongoing Fees", desc: "Low state filing fee, minimal annual report fee, no franchise tax, and no minimum capital requirements." },
       { step: "02", title: "Strong Privacy", desc: "Wyoming does not require member names to be listed in public Secretary of State filings. Your identity stays completely private." },
       { step: "03", title: "No State Income Tax", desc: "Wyoming has zero state personal income tax and zero state corporate income tax. Perfect for international e-commerce founders." },
       { step: "04", title: "Fast Formation", desc: "Wyoming LLC filing approved within 2-4 business days. Official IRS EIN issued in 10-14 business days without an SSN." },
     ],
     whatsIncluded: [
-      "Wyoming Secretary of State Filing Fee ($100 included)",
+      "Wyoming Secretary of State Filing Fee (Included)",
       "Registered Agent Service (1 Full Year Included)",
       "Official US Commercial Business Address (1 Year)",
       "IRS Federal EIN (Tax ID) for Non-Residents without SSN",
@@ -991,7 +991,7 @@ export const servicesData: ServiceDetail[] = [
       "Anyone who values privacy and asset protection",
       "Online business owners who want zero state tax",
     ],
-    pricingNote: "$500 all-inclusive flat package. Includes $100 Wyoming state fee, registered agent, EIN, and BOI filing.",
+    pricingNote: "All-inclusive turnkey package. Includes state filing fee, registered agent, commercial US address, EIN, and BOI filing.",
     faqs: [
       {
         question: "Do I need a US visa, SSN, or physical address to form a Wyoming LLC?",
@@ -1006,8 +1006,8 @@ export const servicesData: ServiceDetail[] = [
         answer: "The Wyoming Secretary of State typically approves the LLC within 2 to 4 business days. IRS federal EIN issuance for international non-residents takes approximately 10 to 14 business days.",
       },
       {
-        question: "Are there any hidden fees beyond the $500 package?",
-        answer: "No. The $500 is completely all-inclusive with zero hidden fees. It includes the mandatory $100 state filing fee, 1 full year of registered agent, commercial US address, IRS EIN, and BOI FinCEN filing.",
+        question: "Are there any hidden fees beyond the formation package?",
+        answer: "No. The formation package is completely all-inclusive with zero hidden fees. It includes the mandatory state filing fee, 1 full year of registered agent, commercial US address, IRS EIN, and BOI FinCEN filing.",
       },
     ],
   },
@@ -1018,23 +1018,23 @@ export const servicesData: ServiceDetail[] = [
     category: "US Corporate",
     categoryBadge: "Gateway for E-Commerce & East Coast Amazon FBA",
     title: "Florida LLC Formation Service",
-    tagline: "Launch your commercial presence in the nation’s top trade state for just $500 all-inclusive. Zero personal state income tax, direct Sunbiz electronic processing, and unmatched logistics access.",
+    tagline: "Launch your commercial presence in the nation’s top trade state with all-inclusive turnkey setup. Zero personal state income tax, direct Sunbiz electronic processing, and unmatched logistics access.",
     summary:
-      "Launch your commercial presence in the nation’s top trade state for just $500 all-inclusive. Zero personal state income tax, direct Sunbiz electronic processing, and unmatched logistics access.",
+      "Launch your commercial presence in the nation’s top trade state with all-inclusive turnkey setup. Zero personal state income tax, direct Sunbiz electronic processing, and unmatched logistics access.",
     heroImage: "/images/florida-llc.jpg",
     badge: "US Corporate",
-    priceBadge: "$500 Flat",
-    heroCtaText: "Start Florida LLC ($500)",
-    heroWhatsappText: "Hi Xonehub, I want to start my Florida LLC ($500).",
+    priceBadge: "Turnkey Package",
+    heroCtaText: "Start Florida LLC",
+    heroWhatsappText: "Hi Xonehub, I want to start my Florida LLC.",
     highlights: [
-      "Includes $125 State Filing Fee",
+      "Includes Official Sunbiz State Filing Fee",
       "Sunbiz direct electronic filing (3-5 days)",
       "0% personal state income tax & $0 franchise tax",
       "Premier East Coast Amazon logistics gateway",
     ],
     metrics: [
-      { value: "$500", label: "Total Turnkey Price" },
-      { value: "$125", label: "State Fee Included" },
+      { value: "Turnkey", label: "Total Formation Setup" },
+      { value: "Included", label: "State Fee Covered" },
       { value: "3–5 Days", label: "State Filing Speed" },
       { value: "0%", label: "Personal Income Tax" },
     ],
@@ -1048,7 +1048,7 @@ export const servicesData: ServiceDetail[] = [
       { step: "04", title: "Bank & Amazon Store Onboarding (Day 15+)", desc: "Open your US business bank account (Mercury / Relay / Wise) and initiate Amazon Seller Central." },
     ],
     whatsIncluded: [
-      "Florida Division of Corporations Filing Fee ($125 Included)",
+      "Florida Division of Corporations Filing Fee (Included)",
       "Florida Registered Agent Service (1 Full Year)",
       "Commercial Street Address in Florida with Mail Forwarding",
       "Federal EIN (Tax ID) from IRS for Non-Residents",
@@ -1065,15 +1065,15 @@ export const servicesData: ServiceDetail[] = [
       "Founders wanting fast Sunbiz electronic registration",
       "Global entrepreneurs who need a recognized US commercial identity",
     ],
-    pricingNote: "$500 all-inclusive flat price. Includes $125 Florida state filing fee.",
+    pricingNote: "All-inclusive flat package. Includes Florida state filing fee, registered agent, commercial address, and EIN.",
     faqs: [
       {
         question: "Why choose Florida over other states for my Amazon business?",
         answer: "Florida is the premier gateway for East Coast Amazon logistics, container shipping via PortMiami, and enjoys 0% personal state income tax with rapid 3-5 day Sunbiz electronic processing.",
       },
       {
-        question: "Is the $125 Florida state filing fee included in this $500 price?",
-        answer: "Yes. The statutory $125 Florida Division of Corporations filing fee is 100% included in the $500 flat turnkey price.",
+        question: "Is the Florida state filing fee included in this package?",
+        answer: "Yes. The statutory Florida Division of Corporations filing fee is 100% included in the flat turnkey package.",
       },
       {
         question: "What are Florida's annual ongoing requirements?",
@@ -1092,23 +1092,23 @@ export const servicesData: ServiceDetail[] = [
     category: "US Corporate",
     categoryBadge: "The #2 Economy in the USA — Commercial Powerhouse",
     title: "Texas LLC Formation",
-    tagline: "Establish your business in the industrial and e-commerce capital of the southern US for $550 all-inclusive. Zero personal state tax, top-tier corporate prestige, and premier commercial banking status.",
+    tagline: "Establish your business in the industrial and e-commerce capital of the southern US with all-inclusive turnkey setup. Zero personal state tax, top-tier corporate prestige, and premier commercial banking status.",
     summary:
-      "Establish your business in the industrial and e-commerce capital of the southern US for $550 all-inclusive. Zero personal state tax, top-tier corporate prestige, and premier commercial banking status.",
+      "Establish your business in the industrial and e-commerce capital of the southern US with all-inclusive turnkey setup. Zero personal state tax, top-tier corporate prestige, and premier commercial banking status.",
     heroImage: "/images/texas-llc.jpg",
     badge: "US Corporate",
-    priceBadge: "$550 Flat Fee",
-    heroCtaText: "Start Texas LLC ($550)",
-    heroWhatsappText: "Hi Xonehub, I want to start my Texas LLC ($550).",
+    priceBadge: "Turnkey Package",
+    heroCtaText: "Start Texas LLC",
+    heroWhatsappText: "Hi Xonehub, I want to start my Texas LLC.",
     highlights: [
-      "Includes $300 Texas SOS State Fee",
+      "Includes Texas SOS State Filing Fee",
       "$2.47M Franchise Tax Exemption ($0 tax due)",
       "Central US Amazon FBA Mega Hub (25+ FCs)",
       "Tier-1 Commercial Banking Trust",
     ],
     metrics: [
-      { value: "$550", label: "Flat Fee All-Inclusive" },
-      { value: "$300", label: "Texas SOS Fee Included" },
+      { value: "Turnkey", label: "All-Inclusive Setup" },
+      { value: "Included", label: "Texas SOS Fee Covered" },
       { value: "$2.47M", label: "Franchise Tax Exemption" },
       { value: "25+", label: "Amazon Fulfillment Centers" },
     ],
@@ -1122,7 +1122,7 @@ export const servicesData: ServiceDetail[] = [
       { step: "04", title: "Tier-1 US Banking Onboarding", desc: "We guide your application for Mercury, Relay, Wise, or physical US commercial accounts." },
     ],
     whatsIncluded: [
-      "Texas Secretary of State Filing Fee ($300 Included)",
+      "Texas Secretary of State Filing Fee (Included)",
       "Texas Registered Agent Service (1 Full Year)",
       "Commercial Street Address in Texas with Mail Scanning",
       "IRS Federal EIN (Employer Identification Number) for Non-Residents",
@@ -1138,11 +1138,11 @@ export const servicesData: ServiceDetail[] = [
       "Founders wanting zero personal income tax and $2.47M franchise tax exemption",
       "Businesses moving containers through Gulf Coast and central freight lines",
     ],
-    pricingNote: "$550 flat fee. Includes the entire $300 Texas Secretary of State statutory fee.",
+    pricingNote: "All-inclusive flat package. Includes the entire Texas Secretary of State statutory fee, registered agent, commercial address, and EIN.",
     faqs: [
       {
-        question: "Is the $300 Texas Secretary of State fee included in the $550 price?",
-        answer: "Yes. Texas has a high statutory Secretary of State filing fee of $300, which is fully covered inside our $550 turnkey package.",
+        question: "Is the Texas Secretary of State fee included in the price?",
+        answer: "Yes. Texas has a high statutory Secretary of State filing fee, which is fully covered inside our turnkey package.",
       },
       {
         question: "What is the Texas Franchise Tax rule for non-residents?",
